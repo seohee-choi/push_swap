@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_ps_stack.c                                    :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 18:47:36 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/16 20:32:38 by jolim            ###   ########.fr       */
+/*   Created: 2021/03/16 18:33:28 by jolim             #+#    #+#             */
+/*   Updated: 2021/03/17 23:49:09 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ps_checker.h"
-#include "libft.h"
+#ifndef PS_CHECKER_H
+# define PS_CHECKER_H
 
-bool	is_int(int n)
-{
+# include "stack_op.h"
 
-}
+int	checker(int argc, char **argv);
 
-t_ps_stack	*init_ps_stack(int count, char **numbers)
-{
-	t_ps_stack	*ps_stack;
-	t_ps_node	*new_node;
-
-}
+#endif

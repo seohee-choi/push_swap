@@ -6,7 +6,7 @@
 #    By: jolim <jolim@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/07 07:07:34 by jolim             #+#    #+#              #
-#    Updated: 2021/03/14 01:14:36 by jolim            ###   ########.fr        #
+#    Updated: 2021/03/17 21:38:51 by jolim            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,7 @@ CFLAGS = -Wall -Werror -Wextra
 NAME = ../libgnl.a
 
 OBJS = get_next_line.o \
-		get_next_line_utils.o \
-		get_next_cmd.o \
+		get_next_line_utils.o
 
 SRCS = $(OBJS:.o=.c)
 
