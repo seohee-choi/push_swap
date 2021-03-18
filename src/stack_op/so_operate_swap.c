@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_operate_swap.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:39:32 by seohchoi          #+#    #+#             */
-/*   Updated: 2021/03/18 18:50:34 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/18 19:27:48 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ bool	so_sa(void)
 	two_stacks = get_two_stacks();
 	if ((*two_stacks)->a_top->down_node != NULL)
 		so_swap_stack(&(*two_stacks)->a_top);
+
+	print_ps_node_list((*two_stacks)->a_top);
+	write(1, "---a---\n", 8);
+	// print_ps_node_list((*two_stacks)->b_top);
+	// write(1, "---b---\n", 8);
 	return true;
 }
 

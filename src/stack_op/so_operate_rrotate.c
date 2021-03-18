@@ -6,6 +6,10 @@ bool				so_rra(void)
 
 	two_stacks = get_two_stacks();
 	so_reverse_rotate_stack(&(*two_stacks)->a_top);
+	
+	print_ps_node_list((*two_stacks)->a_top);
+	write(1, "---a---\n", 8);
+	
 	return true;
 }
 
