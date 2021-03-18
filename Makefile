@@ -89,10 +89,10 @@ $(SO_A): $(SO_OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
 $(CHECKER): $(CH_OBJS) $(SO_A)
-	$(CC) $(CFLAGS) $(LFLAGS) $(IFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) $(LFLAGS) $(IFLAGS) -o $@ $(CH_OBJS)
 
 $(PUSH_SWAP): $(PS_OBJS) $(SO_A)
-	$(CC) $(CFLAGS) $(LFLAGS) $(IFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) $(LFLAGS) $(IFLAGS) -o $@ $(PS_OBJS)
 
 $(SO_OBJ_DIR)%.o: $(SO_SRC_DIR)%.c
 	mkdir -p $(dir $@)
@@ -100,11 +100,11 @@ $(SO_OBJ_DIR)%.o: $(SO_SRC_DIR)%.c
 
 $(CH_OBJ_DIR)%.o: $(CH_SRC_DIR)%.c
 	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(IFLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS) $(IFLAGS) -o $@ -c $^
 
 $(PS_OBJ_DIR)%.o: $(PS_SRC_DIR)%.c
 	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(IFLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS) $(IFLAGS) -o $@ -c $^
 
 clean: ## delete all files compiled except for executable
 	rm -rf $(OBJ_DIR) lib$(GNL).a lib$(LIBFT).a $(SO_A)
