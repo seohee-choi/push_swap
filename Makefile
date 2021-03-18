@@ -38,6 +38,7 @@ SO_SRC = \
 	so_operate_rrotate.c \
 	so_operate_swap.c \
 	so_operation.c \
+	so_print_stack.c \
 	so_push_pop_rotate.c \
 	so_set_two_stacks.c
 SO_SRC_DIR = $(SRC_DIR)/$(STACK_OP)/
