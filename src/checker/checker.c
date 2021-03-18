@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:31:02 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 18:02:42 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/18 18:48:23 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	checker(int argc, char **argv)
 	if (!two_stacks)
 		return (1);
 	print_ps_node_list(two_stacks->a_top);
+	set_two_stacks(two_stacks);
 	ret = 1;
 	while (ret)
 	{
@@ -43,6 +44,6 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (0);
 	ret = checker(argc, argv);
-	system("leaks checker");
+	// system("leaks checker");
 	return (ret);
 }

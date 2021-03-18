@@ -20,12 +20,11 @@ static void	swap(int *a, int *b)
 	return ;
 }
 
-void	quick_sort(int number[], int first, int last)
+void	quick_sort(int *number, int first, int last)
 {
 	int	i;
 	int	j;
 	int	pivot;
-	int	temp;
 
 	if (first < last)
 	{

@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:39:32 by seohchoi          #+#    #+#             */
-/*   Updated: 2021/03/18 18:00:32 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/18 18:50:34 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ bool	so_sa(void)
 	two_stacks = get_two_stacks();
 	if ((*two_stacks)->a_top->down_node != NULL)
 		so_swap_stack(&(*two_stacks)->a_top);
-	else
-		return false;
 	return true;
 }
 
@@ -31,8 +29,6 @@ bool	so_sb(void)
 	two_stacks = get_two_stacks();
 	if ((*two_stacks)->b_top->down_node != NULL)
 		so_swap_stack(&(*two_stacks)->b_top);
-	else
-		return false;
 	return true;
 }
 

@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 20:03:06 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 18:10:47 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/18 18:28:34 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,17 +66,17 @@ void	print_ps_node_list(t_ps_node *top);
 ** functions of so_operate_push.c / so_operate_rrotate.c / so_operate_rotate.c /
 ** so_operate_swap.c
 */
-bool				so_pa(void);
-bool				so_pb(void);
-bool				so_ra(void);
-bool				so_rb(void);
-bool				so_rr(void);
-bool				so_rra(void);
-bool				so_rrb(void);
-bool				so_rrr(void);
+bool	so_pa(void);
+bool	so_pb(void);
+bool	so_ra(void);
+bool	so_rb(void);
+bool	so_rr(void);
+bool	so_rra(void);
+bool	so_rrb(void);
+bool	so_rrr(void);
 bool	so_sa(void);
 bool	so_sb(void);
-bool				so_ss(void);
+bool	so_ss(void);
 /*
 ** functions of so_push_pop_rotate.c do operations on only one stack.
 */

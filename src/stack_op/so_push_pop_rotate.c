@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_push_pop_rotate.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 15:14:15 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 17:58:33 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/18 18:46:223 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,13 @@ t_ps_node	*so_pop_stack(t_ps_node	**top)
 	if ((*top)->down_node == *top)
 	{
 		*top = NULL;
+		extractee->up_node = NULL;
+		extractee->down_node = NULL;
 		return (extractee);
 	}
 	bottom = extractee->up_node;
-	bottom->down_node = new_top;
 	new_top = extractee->down_node;
+	bottom->down_node = new_top;
 	new_top->up_node = bottom;
 	extractee->up_node = NULL;
 	extractee->down_node = NULL;

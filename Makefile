@@ -14,7 +14,7 @@ CC = gcc
 AR = ar
 MK = make
 
-# CFLAGS = -Wall -Werror -Wextra #$(DEBUGF)
+CFLAGS = -Wall -Werror -Wextra $(DEBUGF)
 LFLAGS = -l$(STACK_OP) -l$(LIBFT) -l$(GNL) -L.
 IFLAGS = -I$(INC_DIR) -I$(LIBFT_DIR) -I$(GNL_DIR)
 AFLAGS = -rcus
@@ -65,6 +65,7 @@ SRCS_DIR = $(SO_SRCS_DIR)
 OBJS_DIR = $(SO_OBJ_DIR) $(CH_OBJ_DIR)
 
 PS_SRC = \
+	ps_init_list.c \
 	push_swap.c \
 	quick_sort.c
 PS_SRC_DIR = $(SRC_DIR)/$(PUSH_SWAP)/

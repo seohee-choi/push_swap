@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:27:19 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 18:08:17 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/18 18:47:09 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	push_swap(int argc, char **argv)
 	two_stacks = so_init_stacks(argc - 1, &argv[1]);
 	if (!two_stacks)
 		return (1);
+	ps_init_list(list, two_stacks->a_top);
+	quick_sort(list, 0, argc - 2);
 	return (0);
 }
 
