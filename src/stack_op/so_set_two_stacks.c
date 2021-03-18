@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   so_set_two_stacks.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 18:33:28 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 18:14:31 by jolim            ###   ########.fr       */
+/*   Created: 2021/03/18 16:05:03 by jolim             #+#    #+#             */
+/*   Updated: 2021/03/18 17:39:33 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PS_CHECKER_H
-# define PS_CHECKER_H
+#include "stack_op.h"
 
-# include "stack_op.h"
+t_two_stacks	**get_two_stacks(void)
+{
+	static t_two_stacks	*two_stacks = NULL;
 
-int	checker(int argc, char **argv);
-bool do_operation(char *line);
+	return (&two_stacks);
+}
 
-#endif
+void	set_two_stacks(t_two_stacks *two_stacks)
+{
+	t_two_stacks	**stack_setting;
+
+	stack_setting = get_two_stacks();
+	*stack_setting = two_stacks;
+}

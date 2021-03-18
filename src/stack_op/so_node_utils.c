@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_node_utils.c                                    :+:      :+:    :+:   */
+/*   so_node_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 21:19:23 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 12:08:55 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/18 17:39:25 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,7 @@ void	add_ps_node_bottom(t_ps_node **top, t_ps_node *new_node)
 	}
 	curr = *top;
 	while (curr->down_node != *top)
-	{
 		curr = curr->down_node;
-	}
 	curr->down_node = new_node;
 	new_node->up_node = curr;
 	new_node->down_node = *top;

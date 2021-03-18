@@ -5,18 +5,16 @@ NAME = $(CHECKER) # $(PUSH_SWAP)
 CHECKER = checker
 PUSH_SWAP = push_swap
 
-# PUSH_SWAP = push_swap
-
 all: gnl libft $(NAME) ## compile the program
 
 ch: gnl libft $(CHECKER)
-# ps: gnl libft $(PUSH_SWAP)
+ps: gnl libft $(PUSH_SWAP)
 
 CC = gcc
 AR = ar
 MK = make
 
-CFLAGS = -Wall -Werror -Wextra $(DEBUGF)
+# CFLAGS = -Wall -Werror -Wextra #$(DEBUGF)
 LFLAGS = -l$(STACK_OP) -l$(LIBFT) -l$(GNL) -L.
 IFLAGS = -I$(INC_DIR) -I$(LIBFT_DIR) -I$(GNL_DIR)
 AFLAGS = -rcus
@@ -32,10 +30,16 @@ SO_A = lib$(STACK_OP).a
 
 
 SO_SRC = \
-	ps_init_stack.c \
-	ps_init_utils.c \
-	ps_node_utils.c \
-	ps_operation.c
+	so_init_stack.c \
+	so_init_utils.c \
+	so_node_utils.c \
+	so_operate_push.c \
+	so_operate_rotate.c \
+	so_operate_rrotate.c \
+	so_operate_swap.c \
+	so_operation.c \
+	so_push_pop_rotate.c \
+	so_set_two_stacks.c
 SO_SRC_DIR = $(SRC_DIR)/$(STACK_OP)/
 SO_SRCS = $(addprefix $(SO_SRC_DIR),$(SO_SRC))
 SO_SRCS_DIR = $(dir $(SO_SRCS))
@@ -46,6 +50,7 @@ SO_OBJS = $(addprefix $(SO_OBJ_DIR),$(SO_OBJ))
 SO_OBJS_DIR = $(dir $(SO_OBJS))
 
 CH_SRC = \
+	ch_do_operation.c \
 	checker.c
 CH_SRC_DIR = $(SRC_DIR)/$(CHECKER)/
 CH_SRCS = $(addprefix $(CH_SRC_DIR),$(CH_SRC))
@@ -56,17 +61,18 @@ CH_OBJ_DIR = $(OBJ_DIR)/$(CHECKER)/
 CH_OBJS = $(addprefix $(CH_OBJ_DIR),$(CH_OBJ))
 CH_OBJS_DIR = $(dir $(CH_OBJS))
 
-
 SRCS_DIR = $(SO_SRCS_DIR)
 OBJS_DIR = $(SO_OBJ_DIR) $(CH_OBJ_DIR)
 
-# PS_SRC =
-# PS_SRC_DIR = ./src/
-# PS_SRCS = $(addprefix $(SRC_DIR),$(SRC))
+PS_SRC = \
+	push_swap.c \
+	quick_sort.c
+PS_SRC_DIR = $(SRC_DIR)/$(PUSH_SWAP)/
+PS_SRCS = $(addprefix $(PS_SRC_DIR),$(PS_SRC))
 
-# PS_OBJ = $(SRC:%.c=%.o)
-# PS_OBJ_DIR := ./object/
-# PS_OBJS = $(addprefix $(OBJ_DIR),$(OBJ))
+PS_OBJ = $(PS_SRC:%.c=%.o)
+PS_OBJ_DIR = $(OBJ_DIR)/$(PUSH_SWAP)/
+PS_OBJS = $(addprefix $(PS_OBJ_DIR),$(PS_OBJ))
 
 GNL = gnl
 GNL_DIR = ./get_next_line
@@ -79,13 +85,14 @@ gnl:
 libft:
 	$(MK) $(MFLAGS) $(LIBFT_DIR)
 
-$(CHECKER): $(CH_OBJS) $(SO_A)
-	$(CC) $(CFLAGS) $(LFLAGS) $(IFLAGS) -o $@ $<
-
 $(SO_A): $(SO_OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
-# $(PUSH_SWAP):
+$(CHECKER): $(CH_OBJS) $(SO_A)
+	$(CC) $(CFLAGS) $(LFLAGS) $(IFLAGS) -o $@ $<
+
+$(PUSH_SWAP): $(PS_OBJS) $(SO_A)
+	$(CC) $(CFLAGS) $(LFLAGS) $(IFLAGS) -o $@ $<
 
 $(SO_OBJ_DIR)%.o: $(SO_SRC_DIR)%.c
 	mkdir -p $(dir $@)
@@ -95,8 +102,12 @@ $(CH_OBJ_DIR)%.o: $(CH_SRC_DIR)%.c
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(IFLAGS) -o $@ -c $<
 
+$(PS_OBJ_DIR)%.o: $(PS_SRC_DIR)%.c
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(IFLAGS) -o $@ -c $<
+
 clean: ## delete all files compiled except for executable
-	rm -rf $(OBJ_DIR) $(GNL) $(LIBFT)
+	rm -rf $(OBJ_DIR) lib$(GNL).a lib$(LIBFT).a $(SO_A)
 	$(MK) clean $(MFLAGS) $(GNL_DIR)
 	$(MK) clean $(MFLAGS) $(LIBFT_DIR)
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_init_utils.c                                    :+:      :+:    :+:   */
+/*   so_init_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 20:50:24 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 12:05:09 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/18 17:35:11 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ bool	is_atoi(char *str, int *n)
 	while (ft_isdigit(*str))
 	{
 		num = 10 * num + (*(str++) - '0') * sign;
-		if (num > PS_INT_MAX || num < PS_INT_MIN)
+		if (num > SO_INT_MAX || num < SO_INT_MIN)
 			return (false);
 	}
 	*n = (int)num;
@@ -53,8 +53,8 @@ void	*print_error(void)
 	return (NULL);
 }
 
-void	*malloc_failed(void)
+void	*exit_error(void)
 {
-	perror(NULL);
+	exit(1);
 	return (NULL);
 }

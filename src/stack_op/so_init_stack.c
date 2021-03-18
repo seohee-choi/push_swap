@@ -1,25 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_init_stack.c                                    :+:      :+:    :+:   */
+/*   so_init_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:47:36 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 12:03:25 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/18 17:39:07 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack_op.h"
-
-static void	delete_ps_stack(t_two_stacks *two_stacks)
-{
-	delete_ps_node_list(two_stacks->a_top);
-	delete_ps_node_list(two_stacks->b_top);
-	free(two_stacks);
-	two_stacks = NULL;
-	return ;
-}
 
 static bool	is_duplicated(t_ps_node *top, int n)
 {
@@ -46,25 +37,25 @@ static t_two_stacks	*add_str_a_stack(t_two_stacks *two_stacks, char *num)
 
 	if (!is_atoi(num, &n))
 	{
-		delete_ps_stack(two_stacks);
-		return(print_error());
+		clear_ps_stack(two_stacks);
+		return (print_error());
 	}
 	if (is_duplicated(two_stacks->a_top, n))
 	{
-		delete_ps_stack(two_stacks);
-		return(print_error());
+		clear_ps_stack(two_stacks);
+		return (print_error());
 	}
 	new_node = new_ps_node(n);
 	if (!new_node)
 	{
-		delete_ps_stack(two_stacks);
-		return (malloc_failed());
+		clear_ps_stack(two_stacks);
+		return (exit_error());
 	}
-	add_ps_node_bottom(&(two_stacks->a_top), new_ps_node(n));
+	add_ps_node_bottom(&(two_stacks->a_top), new_node);
 	return (two_stacks);
 }
 
-t_two_stacks	*ps_init_stacks(int count, char **numbers)
+t_two_stacks	*so_init_stacks(int count, char **numbers)
 {
 	t_two_stacks	*two_stacks;
 	int				i;
@@ -75,8 +66,19 @@ t_two_stacks	*ps_init_stacks(int count, char **numbers)
 	{
 		two_stacks = add_str_a_stack(two_stacks, numbers[i]);
 		if (!two_stacks)
+		{
+			free(two_stacks);
+			two_stacks = NULL;
 			return (NULL);
+		}
 		i++;
 	}
 	return (two_stacks);
+}
+
+void	clear_ps_stack(t_two_stacks *two_stacks)
+{
+	delete_ps_node_list(two_stacks->a_top);
+	delete_ps_node_list(two_stacks->b_top);
+	return ;
 }

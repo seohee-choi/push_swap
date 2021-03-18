@@ -1,6 +1,7 @@
 {
 	"files.associations": {
 		"cstdio": "c",
-		"stack_op.h": "c"
+		"stack_op.h": "c",
+		"checker.h": "c"
 	}
 }

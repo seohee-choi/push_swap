@@ -1,48 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 18:31:02 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 18:02:42 by jolim            ###   ########.fr       */
+/*   Created: 2021/03/18 17:27:19 by jolim             #+#    #+#             */
+/*   Updated: 2021/03/18 18:08:17 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
-int	checker(int argc, char **argv)
+int	push_swap(int argc, char **argv)
 {
 	t_two_stacks	*two_stacks;
-	char			*line;
-	int				ret;
+	int				list[argc - 1];
 
 	two_stacks = so_init_stacks(argc - 1, &argv[1]);
 	if (!two_stacks)
 		return (1);
-	print_ps_node_list(two_stacks->a_top);
-	ret = 1;
-	while (ret)
-	{
-		ret = get_next_line(STDIN_FILENO, &line);
-		if (ret == -1)
-			break;
-		if (!do_operation(line))
-			break;
-	}
-	clear_ps_stack(two_stacks);
-	free(two_stacks);
 	return (0);
 }
 
 int	main(int argc, char **argv)
 {
-	int	ret;
-
-	if (argc == 1)
-		return (0);
-	ret = checker(argc, argv);
-	system("leaks checker");
-	return (ret);
+	if (push_swap(argc, argv))
+		return (1);
+	return (0);
 }
