@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 20:03:06 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 18:28:34 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/18 20:58:18 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ t_ps_node	*new_ps_node(int element);
 void	add_ps_node_bottom(t_ps_node **top, t_ps_node *new_node);
 void	delete_ps_node_list(t_ps_node *node);
 void	print_ps_node_list(t_ps_node *top);
+void	print_ps_two_stacks(t_two_stacks *two_stacks);
 
 /*
 ** functions of so_operate_push.c / so_operate_rrotate.c / so_operate_rotate.c /

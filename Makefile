@@ -51,6 +51,7 @@ SO_OBJS_DIR = $(dir $(SO_OBJS))
 
 CH_SRC = \
 	ch_do_operation.c \
+	ch_result_check.c \
 	checker.c
 CH_SRC_DIR = $(SRC_DIR)/$(CHECKER)/
 CH_SRCS = $(addprefix $(CH_SRC_DIR),$(CH_SRC))

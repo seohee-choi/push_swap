@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:39:32 by seohchoi          #+#    #+#             */
-/*   Updated: 2021/03/18 20:01:38 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/18 21:20:23 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ bool	so_pb(void)
 	node_taken = so_pop_stack(&(*two_stacks)->a_top);
 	if (!node_taken)
 		return (true);
+	print_ps_node_list((*two_stacks)->a_top);
 	so_push_stack(&(*two_stacks)->b_top, node_taken);
-	so_pop_stack(&(*two_stacks)->a_top);
 	return (true);
 }

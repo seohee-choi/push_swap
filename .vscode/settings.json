@@ -2,6 +2,7 @@
 	"files.associations": {
 		"cstdio": "c",
 		"stack_op.h": "c",
-		"checker.h": "c"
+		"checker.h": "c",
+		"push_swap.h": "c"
 	}
 }

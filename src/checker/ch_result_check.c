@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_init_list.c                                     :+:      :+:    :+:   */
+/*   ch_result_check.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/18 18:09:01 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 18:29:004 by jolim            ###   ########.fr       */
+/*   Created: 2021/03/18 20:42:40 by jolim             #+#    #+#             */
+/*   Updated: 2021/03/18 21:12:07 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	ps_init_list(int list[], t_ps_node *a_stack_top)
+void	check_result(t_two_stacks *two_stacks)
 {
 	t_ps_node	*node;
-	int			i;
 
-	node = a_stack_top;
-	i = 0;
-	while (node->down_node != a_stack_top)
+	if (two_stacks->b_top != NULL)
 	{
-		list[i++] = node->element;
+		ft_putendl_fd("KO", STDOUT_FILENO);
+		return ;
+	}
+	node = two_stacks->a_top;
+	while (node->down_node != two_stacks->a_top)
+	{
+		if (node->element > node->down_node->element)
+		{
+			ft_putendl_fd("KO", STDOUT_FILENO);
+			return ;
+		}
 		node = node->down_node;
 	}
-	list[i++] = node->element;
+	ft_putendl_fd("OK", STDOUT_FILENO);
+	return ;
 }

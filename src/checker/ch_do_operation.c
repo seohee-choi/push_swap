@@ -21,5 +21,9 @@ bool do_operation(char *line)
 		return (so_rr());
 	else if (ft_strcmp(line, "rra") == 0)
 		return (so_rra());
-	return false;
+	else if (ft_strcmp(line, "rrb") == 0)
+		return (so_rra());
+	else if (ft_strcmp(line, "rrr") == 0)
+		return (so_rrr());
+	return (false);
 }

@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 21:19:23 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 17:39:25 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/18 21:16:2 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ void	print_ps_node_list(t_ps_node *top)
 	t_ps_node	*curr;
 
 	curr = top;
+	if (!top)
+		return ;
 	while (curr->down_node != top)
 	{
 		ft_putnbr_fd(curr->element, STDOUT_FILENO);
@@ -80,5 +82,47 @@ void	print_ps_node_list(t_ps_node *top)
 	}
 	ft_putnbr_fd(curr->element, STDOUT_FILENO);
 	ft_putstr_fd("\n", STDOUT_FILENO);
+	return ;
+}
+
+
+void	print_ps_two_stacks(t_two_stacks *two_stacks)
+{
+	t_ps_node	*curr_a;
+	t_ps_node	*curr_b;
+	int a_is_top;
+	int b_is_top;
+
+	if (!two_stacks)
+		return ;
+	a_is_top = false;
+	b_is_top = false;
+	curr_a = two_stacks->a_top;
+	curr_b = two_stacks->b_top;
+	if (!curr_a)
+		a_is_top = true;
+	if (!curr_b)
+		b_is_top = true;
+	ft_putstr_fd("----------", STDOUT_FILENO);
+	while (a_is_top == false || b_is_top == false)
+	{
+		ft_putstr_fd("\n", STDOUT_FILENO);
+		if (a_is_top == false)
+		{
+			ft_putnbr_fd(curr_a->element, STDOUT_FILENO);
+			curr_a = curr_a->down_node;
+		}
+		if (b_is_top == false)
+		{
+			write(1, "\t", 1);
+			ft_putnbr_fd(curr_b->element, STDOUT_FILENO);
+			curr_b = curr_b->down_node;
+		}
+		if (curr_a && curr_a == two_stacks->a_top)
+			a_is_top = true;
+		if (curr_b && curr_b == two_stacks->b_top)
+			b_is_top = true;
+	}
+	ft_putstr_fd("\n----------\n", STDOUT_FILENO);
 	return ;
 }
