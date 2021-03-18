@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 21:19:23 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/17 23:42:07 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/18 12:08:55 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,11 @@ void	delete_ps_node_list(t_ps_node *node)
 	{
 		next = curr->up_node;
 		free(curr);
+		curr = NULL;
 		curr = next;
 	}
-	curr = node;
-	if (curr->up_node && curr->up_node->down_node)
-		curr->up_node->down_node = NULL;
-	while (curr->down_node)
-	{
-		next = curr->down_node;
-		free(curr);
-		curr = next;
-	}
+	free(curr);
+	curr = NULL;
 	return ;
 }
 
@@ -86,5 +80,7 @@ void	print_ps_node_list(t_ps_node *top)
 		ft_putstr_fd("\n", STDOUT_FILENO);
 		curr = curr->down_node;
 	}
+	ft_putnbr_fd(curr->element, STDOUT_FILENO);
+	ft_putstr_fd("\n", STDOUT_FILENO);
 	return ;
 }

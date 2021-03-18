@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 20:50:24 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/17 23:42:11 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/18 12:05:09 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ bool	is_atoi(char *str, int *n)
 		if (num > PS_INT_MAX || num < PS_INT_MIN)
 			return (false);
 	}
+	*n = (int)num;
 	if (!*str)
 		return (true);
-	*n = (int)num;
-	return (true);
+	return (false);
 }
 
 void	*print_error(void)
