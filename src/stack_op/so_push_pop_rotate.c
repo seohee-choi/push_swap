@@ -74,21 +74,15 @@ void	so_reverse_rotate_stack(t_ps_node **top)
 
 void	so_swap_stack(t_ps_node **top)
 {
-	t_ps_node	*bottom;
-	t_ps_node	*top_node;
-	t_ps_node	*sub_top;
-	t_ps_node	*sub_sub_top;
+	t_ps_node	*node_a;
+	t_ps_node	*node_b;
 
-	if (!*top || (*top)->down_node == *top)
+	node_a = so_pop_stack(top);
+	if (!node_a)
 		return ;
-	bottom = (*top)->up_node;
-	top_node = (*top)->down_node;
-	sub_top = (*top);
-	sub_sub_top = (*top)->down_node->down_node;
-	bottom->down_node = top_node;
-	top_node->up_node = bottom;
-	top_node->down_node = sub_top;
-	sub_top->up_node = *top;
-	sub_top->down_node = sub_sub_top;
-	sub_sub_top->up_node = sub_top;
+	node_b = so_pop_stack(top);
+	so_push_stack(top, node_a);
+	if (!node_b)
+		return ;
+	so_push_stack(top, node_b);
 }
