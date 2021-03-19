@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:31:02 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/19 15:48:32 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/20 00:10:33 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,5 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (0);
 	ret = checker(argc, argv);
-	system("leaks checker");
 	return (ret);
 }

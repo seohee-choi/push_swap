@@ -12,114 +12,98 @@
 
 #include "push_swap.h"
 
-/*
-** bottom has to be bigger than top.
-*/
-/*
-int	ps_sort_a_to_a(int list[], int top, int bottom)
-{
-	t_two_stacks	*two_stacks;
-	int				n_ra;
-	int				n_rb;
-	int				i;
-
-	if (bottom - top < 3)
-		return (ps_sort_below_three(bottom - top, A_TO_A));
-	while (i < bottom - top + 1)
-	{
-		if (two_stacks->a_top->element >= list[pivot_small(top, bottom)] && \
-		two_stacks->a_top->element < list[pivot_big(top, bottom)])
-			n_ra += ps_print_operate(so_ra); // 2
-		else
-		{
-			ps_print_operate(so_pb); // 3 + 1
-			if (two_stacks->b_top->element <= list[pivot_small(top, bottom)])
-				n_rb += ps_print_operate(so_rb); // 1
-		}
-		i++;
-	}
-	ps_sort_b_to_a(list, pivot_big(top, bottom) + 1, bottom); // sort 3 from b top to a top
-	ps_operate_n_times(min_num(n_ra, n_rb), so_rrr); // 1, 2 to top rrr
-	if (n_ra > n_rb)
-		ps_print_operate(so_rra);
-	else if (n_ra < n_rb)
-		ps_print_operate(so_rrb);
-	ps_sort_a_to_a(list, pivot_small(top, bottom) + 1, pivot_big(top, bottom));
-	ps_sort_b_to_a(list, top, pivot_small(top, bottom));
-}
-*/
-
-void	ps_split_a_third(int big_pivot_value, int small_pivot_value, \
+static void	ps_split_a_third(int big_pivot_value, int small_pivot_value, \
 int *n_ra, int *n_rb)
 {
 	t_two_stacks	*two_stacks;
 
 	two_stacks = *get_two_stacks();
-	if (two_stacks->a_top->element > big_pivot_value)
+	if (two_stacks->a_top->element >= big_pivot_value)
 		*n_ra += ps_print_operate(so_ra); // 3
 	else
 	{
 		ps_print_operate(so_pb); // 2 + 1
-		if (two_stacks->b_top->element > small_pivot_value)
-			*n_rb += ps_print_operate(so_rb); // 2
+		if (two_stacks->b_top->element >= small_pivot_value)
+		{
+			(*n_rb)++;
+			if (two_stacks->b_top->down_node != two_stacks->b_top)
+				ps_print_operate(so_rb); // 2
+		}
 	}
 }
 
-int	ps_sort_split_a(int list[], int top, int bottom)
+void	ps_sort_split_a(int list[], int top, int bottom)
 {
 	int				n_ra;
 	int				n_rb;
 	int				i;
 
+	// printf("stackAsize: >>%d %d<<\n\tbig_pivot: %d\t small_pivot: %d\n", bottom, top,pivot_big(top, bottom),pivot_small(top,bottom));
+	// print_ps_two_stacks(*get_two_stacks());
 	if (bottom - top < 3)
-		return(ps_sort_below_three(two_stacks, bottom - top, STACK_A));
+	{
+		ps_sort_below_three(bottom - top + 1, STACK_A);
+		return ;
+	}
 	n_ra = 0;
 	n_rb = 0;
 	i = -1;
-	two_stacks = *get_two_stacks();
-	while (++i < bottom - top + 1)
+	while (++i <= bottom - top)
+	{
 		ps_split_a_third(list[pivot_big(top, bottom)], \
 		list[pivot_small(top, bottom)], &n_ra, &n_rb);
+	}
 	ps_operate_n_times(min_num(n_ra, n_rb), so_rrr); // 1, 2 to top rrr
 	if (n_ra > n_rb)
 		ps_print_operate(so_rra);
 	else if (n_ra < n_rb)
 		ps_print_operate(so_rrb);
-	ps_sort_split_a(list, pivot_big(top, bottom) + 1, bottom); // sort 3 from a to b
-	ps_sort_split_b(list, pivot_small(top, bottom) + 1, pivot_big(top, bottom)); // sort 2 from b to a
-	ps_sort_split_b(list, top, pivot_small(top, bottom)); // sort 1 from a to b
+	ps_sort_split_a(list, pivot_big(top, bottom), bottom); // sort 3 from a to b
+	ps_sort_split_b(list, pivot_small(top, bottom), pivot_big(top, bottom) - 1); // sort 2 from b to a
+	ps_sort_split_b(list, top, pivot_small(top, bottom) - 1); // sort 1 from a to b
 }
 
-void	ps_split_b_third(int big_pivot_value, int small_pivot_value, \
+static void	ps_split_b_third(int big_pivot_value, int small_pivot_value, \
 int *n_ra, int *n_rb)
 {
 	t_two_stacks	*two_stacks;
 
 	two_stacks = *get_two_stacks();
-	if (two_stacks->b_top->element <= small_pivot_value)
-		*n_ra += ps_print_operate(so_ra); // 1
+	if (two_stacks->b_top->element < small_pivot_value)
+		*n_rb += ps_print_operate(so_rb); // 1
 	else
 	{
-		ps_print_operate(so_pb); // 3 + 2
-		if (two_stacks->a_top->element <= big_pivot_value)
-			*n_rb += ps_print_operate(so_rb); // 2
+		ps_print_operate(so_pa); // 3 + 2
+		if (two_stacks->a_top->element >= big_pivot_value)
+			*n_ra += ps_print_operate(so_ra); // 2
 	}
 }
 
 void	ps_sort_split_b(int list[], int top, int bottom)
 {
-	t_two_stacks	*two_stacks;
 	int				n_ra;
 	int				n_rb;
 	int				i;
 
+	// printf("stackBsize: >>%d %d<<\n\tbig_pivot: %d\t small_pivot: %d\n", bottom, top,pivot_big(top, bottom),pivot_small(top, bottom));
 	if (bottom - top < 3)
-		return (ps_sort_below_three(two_stacks, bottom - top, STACK_B));
+	{
+		ps_sort_below_three(bottom - top + 1, STACK_B);
+	// print_ps_two_stacks(*get_two_stacks());
+		return ;
+	}
 	n_ra = 0;
 	n_rb = 0;
-	i = 0;
-	while (i < bottom - top + 1)
-	{
-		if (two)
-	}
+	i = -1;
+	while (++i <= bottom - top)
+		ps_split_b_third(list[pivot_big(top, bottom)], \
+		list[pivot_small(top, bottom)], &n_ra, &n_rb);
+	ps_sort_split_a(list, pivot_big(top, bottom) + 1, bottom); // 3
+	ps_operate_n_times(min_num(n_ra, n_rb), so_rrr);
+	if (n_ra > n_rb)
+		ps_print_operate(so_rra);
+	else if (n_ra < n_rb)
+		ps_print_operate(so_rrb);
+	ps_sort_split_a(list, pivot_small(top, bottom) + 1, pivot_big(top, bottom)); // 2
+	ps_sort_split_b(list, bottom, pivot_small(top, bottom)); // 1
 }

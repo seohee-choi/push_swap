@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:27:19 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 20:44:10 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/20 00:36:33 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void print_list(int list[], int argc)
 	char *str;
 
 	i = 0;
-	while(i < argc - 1)
+	while(i < argc)
 	{
 		str = ft_itoa(list[i]);
 		write(1, str, ft_strlen(str));
@@ -40,7 +40,13 @@ int	push_swap(int argc, char **argv)
 		return (1);
 	ps_init_list(list, two_stacks->a_top);
 	quick_sort(list, 0, argc - 2);
-	print_list(list, argc);
+	set_two_stacks(two_stacks);
+	// if (argc == 4)
+	// 	ps_sort_size_three();
+	// else
+		ps_sort_split_a(list, 0, argc - 2);
+	clear_ps_stack(two_stacks);
+	free(two_stacks);
 	return (0);
 }
 
