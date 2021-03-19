@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:31:02 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/20 00:10:33 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/20 02:39:57 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	get_operation(t_two_stacks *two_stacks)
 	}
 	ret = do_operation(line);
 	free(line);
-	print_ps_two_stacks(two_stacks);
+	// print_ps_two_stacks(two_stacks);
 	if (ret == false)
 	{
 		print_error();
@@ -50,7 +50,7 @@ int	checker(int argc, char **argv)
 	two_stacks = so_init_stacks(argc - 1, &argv[1]);
 	if (!two_stacks)
 		return (-1);
-	print_ps_node_list(two_stacks->a_top);
+	// print_ps_node_list(two_stacks->a_top);
 	set_two_stacks(two_stacks);
 	ret = 1;
 	times = -1;
@@ -59,9 +59,9 @@ int	checker(int argc, char **argv)
 		ret = get_operation(two_stacks);
 		times++;
 	}
-	ft_putstr_fd("operations: ", STDOUT_FILENO);
-	ft_putnbr_fd(times, STDOUT_FILENO);
-	ft_putendl_fd(" times", STDOUT_FILENO);
+	// ft_putstr_fd("operations: ", STDOUT_FILENO);
+	// ft_putnbr_fd(times, STDOUT_FILENO);
+	// ft_putendl_fd(" times", STDOUT_FILENO);
 	if (ret == 0)
 		check_result(two_stacks);
 	clear_ps_stack(two_stacks);

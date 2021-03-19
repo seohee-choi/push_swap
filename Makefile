@@ -14,7 +14,7 @@ CC = gcc
 AR = ar
 MK = make
 
-CFLAGS = -Wall -Werror -Wextra $(DEBUGF)
+CFLAGS = #-Wall -Werror -Wextra $(DEBUGF)
 LFLAGS = -l$(STACK_OP) -l$(LIBFT) -l$(GNL) -L.
 IFLAGS = -I$(INC_DIR) -I$(LIBFT_DIR) -I$(GNL_DIR)
 AFLAGS = -rcus

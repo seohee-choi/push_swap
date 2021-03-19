@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:27:19 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/20 00:36:33 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/20 01:56:05 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	push_swap(int argc, char **argv)
 	// if (argc == 4)
 	// 	ps_sort_size_three();
 	// else
-		ps_sort_split_a(list, 0, argc - 2);
+		ps_sort_split_a(list, 0, argc - 1);
 	clear_ps_stack(two_stacks);
 	free(two_stacks);
 	return (0);

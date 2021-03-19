@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_simulator_few.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 18:05:47 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/19 23:46:51 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/20 02:38:25 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ static int	ps_sort_two(t_two_stacks *two_stacks, int stack_name)
 	if (stack_name == STACK_A)
 	{
 		if (two_stacks->a_top->element > two_stacks->a_top->down_node->element)
+		{
+			// ft_putstr_fd("hello.... it's me...\n", 1);
 			return (ps_print_operate(so_sa));
+		}
 		return (0);
 	}
 	if (stack_name == STACK_B)
@@ -93,6 +96,7 @@ int	ps_sort_below_three(int num, int stack_name)
 	t_two_stacks	*two_stacks;
 
 	two_stacks = *get_two_stacks();
+	// ft_putstr_fd("hello.... it's below three...\n", 1);
 	if (num == 3)
 		return (ps_sort_three(two_stacks, stack_name));
 	else if (num == 2)
