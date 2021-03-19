@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   ps_simulator_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 18:33:28 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/19 13:15:11 by jolim            ###   ########.fr       */
+/*   Created: 2021/03/19 17:04:31 by jolim             #+#    #+#             */
+/*   Updated: 2021/03/19 17:15:23 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PS_CHECKER_H
-# define PS_CHECKER_H
+#include "push_swap.h"
 
-# define CH_NEWLINE 1
-# define CH_EOF 0
-# define CH_ERROR -1
+int	pivot_big(int top, int bottom)
+{
+	return (top + 2 * (bottom - top) / 3);
+}
 
-# include "stack_op.h"
+int	pivot_small(int top, int bottom)
+{
+	return (top + (bottom - top) / 3);
+}
 
-void	check_result(t_two_stacks *two_stacks);
+int	max_num(int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
 
-int	checker(int argc, char **argv);
-bool do_operation(char *line);
-
-#endif
+int	min_num(int a, int b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}

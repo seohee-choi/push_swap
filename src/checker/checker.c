@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:31:02 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 21:11:49 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/19 15:48:32 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static int	get_operation(t_two_stacks *two_stacks)
 	int		ret;
 	char	*line;
 
+	line = NULL;
 	ret = get_next_line(STDIN_FILENO, &line);
 	if (ret == CH_ERROR)
 	{
@@ -24,13 +25,14 @@ static int	get_operation(t_two_stacks *two_stacks)
 		return (CH_ERROR);
 	}
 	if (ret == CH_EOF)
+	{
+		if (line)
+			free(line);
 		return (CH_EOF);
+	}
 	ret = do_operation(line);
+	free(line);
 	print_ps_two_stacks(two_stacks);
-	// print_ps_node_list(two_stacks->a_top);
-	// write(1, "---a---\n", 8);
-	// print_ps_node_list(two_stacks->b_top);
-	// write(1, "---b---\n", 8);
 	if (ret == false)
 	{
 		print_error();
@@ -42,6 +44,7 @@ static int	get_operation(t_two_stacks *two_stacks)
 int	checker(int argc, char **argv)
 {
 	t_two_stacks	*two_stacks;
+	int				times;
 	int				ret;
 
 	two_stacks = so_init_stacks(argc - 1, &argv[1]);
@@ -50,8 +53,15 @@ int	checker(int argc, char **argv)
 	print_ps_node_list(two_stacks->a_top);
 	set_two_stacks(two_stacks);
 	ret = 1;
+	times = -1;
 	while (ret == 1)
+	{
 		ret = get_operation(two_stacks);
+		times++;
+	}
+	ft_putstr_fd("operations: ", STDOUT_FILENO);
+	ft_putnbr_fd(times, STDOUT_FILENO);
+	ft_putendl_fd(" times", STDOUT_FILENO);
 	if (ret == 0)
 		check_result(two_stacks);
 	clear_ps_stack(two_stacks);
@@ -66,6 +76,6 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (0);
 	ret = checker(argc, argv);
-	// system("leaks checker");
+	system("leaks checker");
 	return (ret);
 }

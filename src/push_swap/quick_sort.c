@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:47:31 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 20:12:08 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/19 15:48:32 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ void	quick_sort(int *number, int first, int last)
 			if (i < j)
 				swap(&(number[i]), &(number[j]));
 		}
-	swap(&(number[pivot]), &(number[j]));
-	quick_sort(number, first, j-1);
-	quick_sort(number, j+1, last);
+		swap(&(number[pivot]), &(number[j]));
+		quick_sort(number, first, j-1);
+		quick_sort(number, j+1, last);
 	}
 	return ;
 }

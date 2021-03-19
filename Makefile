@@ -1,7 +1,7 @@
 .PHONY: all ch ps gnl libft test clean fclean help bonus rebonus debug objdel
 .DEFAULT_GOAL = help
 
-NAME = $(CHECKER) # $(PUSH_SWAP)
+NAME = $(CHECKER) $(PUSH_SWAP)
 CHECKER = checker
 PUSH_SWAP = push_swap
 
@@ -14,7 +14,7 @@ CC = gcc
 AR = ar
 MK = make
 
-CFLAGS = -Wall -Werror -Wextra $(DEBUGF)
+CFLAGS = -Wall -Werror -Wextra #$(DEBUGF)
 LFLAGS = -l$(STACK_OP) -l$(LIBFT) -l$(GNL) -L.
 IFLAGS = -I$(INC_DIR) -I$(LIBFT_DIR) -I$(GNL_DIR)
 AFLAGS = -rcus
