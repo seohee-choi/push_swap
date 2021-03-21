@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 22:00:20 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/19 23:46:51 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/21 16:17:10 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,13 @@ int	ps_sort_size_three(void)
 	if (!ft_strncmp(order, "123", 3))
 		return (0);
 	if (!ft_strncmp(order, "312", 3))
-		return (ps_print_operate(so_ra));
+		return (ps_register_operation(so_ra));
 	if (!ft_strncmp(order, "213", 3))
-		return (ps_print_operate(so_sa));
+		return (ps_register_operation(so_sa));
 	if (!ft_strncmp(order, "231", 3))
-		return (ps_print_operate(so_rra));
-	ps_print_operate(so_sa);
+		return (ps_register_operation(so_rra));
+	ps_register_operation(so_sa);
 	if (!ft_strncmp(order, "132", 3))
-		return (ps_print_operate(so_ra));
-	return(ps_print_operate(so_rra));
+		return (ps_register_operation(so_ra));
+	return(ps_register_operation(so_rra));
 }

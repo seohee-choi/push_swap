@@ -1,50 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_simulator_utils.c                               :+:      :+:    :+:   */
+/*   ps_print_register.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/19 17:04:31 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/21 16:17:11 by jolim            ###   ########.fr       */
+/*   Created: 2021/03/21 16:50:04 by jolim             #+#    #+#             */
+/*   Updated: 2021/03/21 17:41:39 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	pivot_big(int top, int bottom)
+int	**ps_get_register(void)
 {
-	return (top + 2 * (bottom - top) / 3);
+	static int	*ps_register = NULL;
+
+	return (&ps_register);
 }
 
-int	pivot_small(int top, int bottom)
+char const * const	**ps_get_op_list(void)
 {
-	return (top + (bottom - top) / 3);
-}
+	static char const * const	op_list[] = {"", "pa", "pb", "sa", "sb", "ss", "ra", "rb", "rr",\
+	"rra", "rrb", "rrr"};
 
-int	max_num(int a, int b)
-{
-	if (a > b)
-		return (a);
-	return (b);
-}
-
-int	min_num(int a, int b)
-{
-	if (a < b)
-		return (a);
-	return (b);
-}
-
-void	ps_operate_n_times(int n, bool (*op)(void))
-{
-	int	i;
-
-	i = 0;
-	while (i < n)
-	{
-		ps_register_operation(op);
-		i++;
-	}
-	return ;
+	return (&op_list);
 }
