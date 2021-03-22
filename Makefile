@@ -37,10 +37,10 @@ SO_SRC = \
 	so_operate_rotate.c \
 	so_operate_rrotate.c \
 	so_operate_swap.c \
-	so_operation.c \
 	so_print_stack.c \
 	so_push_pop_rotate.c \
 	so_set_two_stacks.c
+	# so_operation.c
 SO_SRC_DIR = $(SRC_DIR)/$(STACK_OP)/
 SO_SRCS = $(addprefix $(SO_SRC_DIR),$(SO_SRC))
 SO_SRCS_DIR = $(dir $(SO_SRCS))
@@ -51,6 +51,7 @@ SO_OBJS = $(addprefix $(SO_OBJ_DIR),$(SO_OBJ))
 SO_OBJS_DIR = $(dir $(SO_OBJS))
 
 CH_SRC = \
+	option_checker.c \
 	ch_do_operation.c \
 	ch_result_check.c \
 	checker.c
