@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:31:02 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 18:19:52 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/22 21:42:29 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static int	get_operation(void)
+static int	get_operation(int option)
 {
 	int		ret;
 	char	*line;
@@ -31,6 +31,8 @@ static int	get_operation(void)
 		return (CH_EOF);
 	}
 	ret = do_operation(line);
+	if (option & DEBUG_FLAG || option & DEBUG_HOR_FLAG)
+		print_ps_two_stacks(*get_two_stacks(), option);
 	free(line);
 	if (ret == false)
 	{
@@ -40,27 +42,33 @@ static int	get_operation(void)
 	return (true);
 }
 
-int	checker(int argc, char **argv)
+int	checker(int argc, char **argv, int option, int option_num)
 {
 	t_two_stacks	*two_stacks;
 	int				times;
 	int				ret;
 
-	two_stacks = so_init_stacks(argc - 1, &argv[1]);
+	two_stacks = so_init_stacks(argc - option_num, &argv[option_num]);
 	if (!two_stacks)
 		return (-1);
-	// print_ps_node_list(two_stacks->a_top);
 	set_two_stacks(two_stacks);
+	if (option & MAN_FLAG)
+		ch_print_manual();
+	if (option & DEBUG_FLAG || option & DEBUG_HOR_FLAG)
+		print_ps_two_stacks(two_stacks, option);
 	ret = 1;
 	times = -1;
 	while (ret == 1)
 	{
-		ret = get_operation();
+		ret = get_operation(option);
 		times++;
 	}
-	// ft_putstr_fd("operations: ", STDOUT_FILENO);
-	// ft_putnbr_fd(times, STDOUT_FILENO);
-	// ft_putendl_fd(" times", STDOUT_FILENO);
+	if (option & DEBUG_FLAG)
+	{
+		ft_putstr_fd("operations: ", STDOUT_FILENO);
+		ft_putnbr_fd(times, STDOUT_FILENO);
+		ft_putendl_fd(" times", STDOUT_FILENO);
+	}
 	if (ret == 0)
 		check_result(two_stacks);
 	clear_ps_stack(two_stacks);
@@ -72,11 +80,13 @@ int	main(int argc, char **argv)
 {
 	int	ret;
 	int	option;
+	int option_num;
 
 	if (argc == 1)
 		return (0);
-	if (argv[1][0] == '-')
-		option = option_check(argv);
-	ret = checker(argc, argv, option);
+	option_num = option_check(argv, &option);
+	if (option_num == CH_ERROR)
+		return (-1);
+	ret = checker(argc, argv, option, option_num);
 	return (ret);
 }

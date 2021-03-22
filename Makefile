@@ -30,6 +30,7 @@ SO_A = lib$(STACK_OP).a
 
 
 SO_SRC = \
+	so_option_checker.c \
 	so_init_stack.c \
 	so_init_utils.c \
 	so_node_utils.c \
@@ -37,10 +38,10 @@ SO_SRC = \
 	so_operate_rotate.c \
 	so_operate_rrotate.c \
 	so_operate_swap.c \
-	so_operation.c \
 	so_print_stack.c \
 	so_push_pop_rotate.c \
 	so_set_two_stacks.c
+	# so_operation.c
 SO_SRC_DIR = $(SRC_DIR)/$(STACK_OP)/
 SO_SRCS = $(addprefix $(SO_SRC_DIR),$(SO_SRC))
 SO_SRCS_DIR = $(dir $(SO_SRCS))
@@ -52,6 +53,7 @@ SO_OBJS_DIR = $(dir $(SO_OBJS))
 
 CH_SRC = \
 	ch_do_operation.c \
+	ch_option.c \
 	ch_result_check.c \
 	checker.c
 CH_SRC_DIR = $(SRC_DIR)/$(CHECKER)/
@@ -67,6 +69,7 @@ SRCS_DIR = $(SO_SRCS_DIR)
 OBJS_DIR = $(SO_OBJ_DIR) $(CH_OBJ_DIR)
 
 PS_SRC = \
+	ps_option.c \
 	ps_init_list.c \
 	ps_print_register.c \
 	ps_register_operation.c \
