@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:52:43 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/21 17:35:43 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/22 17:52:03 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 # define RRB (10)
 # define RRR (11)
 
-# define RG_BASE_SIZE 5000
+# define BASE_SIZE 5000
 
 # include "stack_op.h"
 
@@ -53,12 +53,11 @@ void	ps_init_list(int list[], t_ps_node *a_stack_top);
 ** ps_get_register returns a pointer to ps_register, which will save operations
 ** from the function ps_register_operation.
 **
-** ps_get_op_list returns a pointer to char const * const *op_list, which
-** contains literal strings of the 11 operations.
+** ps_print_register prints the registered operations and merge them if it can
 */
 
-int	**ps_get_register(void);
-char const * const	**ps_get_op_list(void);
+int		**ps_get_register(void);
+void	ps_print_register(void);
 
 /*
 ** a function of ps_register_operation.c
@@ -67,7 +66,7 @@ char const * const	**ps_get_op_list(void);
 ** ps_register.
 */
 
-int	ps_register_operation(bool (*op)(void));
+int		ps_register_operation(bool (*op)(void));
 
 /*
 ** functions of ps_simulator.c
@@ -81,17 +80,18 @@ void	ps_sort_split_b(int list[], int top, int bottom);
 ** simulator.
 */
 
-int	pivot_big(int top, int bottom);
-int	pivot_small(int top, int bottom);
-int	max_num(int a, int b);
-int	min_num(int a, int b);
+int		pivot_big(int top, int bottom);
+int		pivot_small(int top, int bottom);
+int		max_num(int a, int b);
+int		min_num(int a, int b);
 void	ps_operate_n_times(int n, bool (*op)(void));
 
 /*
-** ps_simulator_few.c, ps_size_three.c
+** ps_simulator_few.c, ps_size_three.c, ps_size_five.c
 */
 
-int	ps_sort_below_three(int num, int stack_name);
-int	ps_sort_size_three(void);
+int		ps_sort_below_three(int num, int stack_name);
+int		ps_sort_size_three(void);
+int		ps_sort_size_five(int list[]);
 
 #endif

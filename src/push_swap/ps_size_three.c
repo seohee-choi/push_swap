@@ -6,18 +6,11 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 22:00:20 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/21 16:17:10 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/22 17:45:44 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// 123
-// 132 sa ra
-// 321 sa rra
-// 312 ra
-// 213 sa
-// 231 rra
 
 static int	min_node(t_ps_node *top, t_ps_node *mid, t_ps_node *btm)
 {
@@ -75,5 +68,5 @@ int	ps_sort_size_three(void)
 	ps_register_operation(so_sa);
 	if (!ft_strncmp(order, "132", 3))
 		return (ps_register_operation(so_ra));
-	return(ps_register_operation(so_rra));
+	return (ps_register_operation(so_rra));
 }

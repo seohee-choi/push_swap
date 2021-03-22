@@ -6,13 +6,13 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:31:02 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/20 14:04:32 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/22 18:19:52 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static int	get_operation(t_two_stacks *two_stacks)
+static int	get_operation(void)
 {
 	int		ret;
 	char	*line;
@@ -32,7 +32,6 @@ static int	get_operation(t_two_stacks *two_stacks)
 	}
 	ret = do_operation(line);
 	free(line);
-	// print_ps_two_stacks(two_stacks);
 	if (ret == false)
 	{
 		print_error();
@@ -56,7 +55,7 @@ int	checker(int argc, char **argv)
 	times = -1;
 	while (ret == 1)
 	{
-		ret = get_operation(two_stacks);
+		ret = get_operation();
 		times++;
 	}
 	// ft_putstr_fd("operations: ", STDOUT_FILENO);
@@ -72,9 +71,12 @@ int	checker(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	int	ret;
+	int	option;
 
 	if (argc == 1)
 		return (0);
-	ret = checker(argc, argv);
+	if (argv[1][0] == '-')
+		option = option_check(argv);
+	ret = checker(argc, argv, option);
 	return (ret);
 }

@@ -14,7 +14,7 @@ CC = gcc
 AR = ar
 MK = make
 
-CFLAGS = #-Wall -Werror -Wextra $(DEBUGF)
+CFLAGS = -Wall -Werror -Wextra $(DEBUGF)
 LFLAGS = -l$(STACK_OP) -l$(LIBFT) -l$(GNL) -L.
 IFLAGS = -I$(INC_DIR) -I$(LIBFT_DIR) -I$(GNL_DIR)
 AFLAGS = -rcus
@@ -68,10 +68,12 @@ OBJS_DIR = $(SO_OBJ_DIR) $(CH_OBJ_DIR)
 
 PS_SRC = \
 	ps_init_list.c \
-	ps_print_operate.c \
+	ps_print_register.c \
+	ps_register_operation.c \
 	ps_simulator_few.c \
 	ps_simulator.c \
 	ps_simulator_utils.c \
+	ps_size_five.c \
 	ps_size_three.c \
 	push_swap.c \
 	quick_sort.c

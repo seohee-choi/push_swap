@@ -1,6 +1,6 @@
 #include "stack_op.h"
 
-bool				so_rra(void)
+bool	so_rra(void)
 {
 	t_two_stacks	**two_stacks;
 
@@ -9,7 +9,7 @@ bool				so_rra(void)
 	return (true);
 }
 
-bool				so_rrb(void)
+bool	so_rrb(void)
 {
 	t_two_stacks	**two_stacks;
 
@@ -18,7 +18,7 @@ bool				so_rrb(void)
 	return (true);
 }
 
-bool				so_rrr(void)
+bool	so_rrr(void)
 {
 	so_rra();
 	so_rrb();

@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:39:32 by seohchoi          #+#    #+#             */
-/*   Updated: 2021/03/18 20:34:43 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/22 18:01:48 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ bool	so_sb(void)
 	return (true);
 }
 
-bool				so_ss(void)
+bool	so_ss(void)
 {
 	so_sa();
 	so_sb();

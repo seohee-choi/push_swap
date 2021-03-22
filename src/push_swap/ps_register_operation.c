@@ -6,13 +6,13 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:42:36 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/21 17:40:43 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/22 17:18:57 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	copy_registration(char ***new_ps_register, char ***old_ps_register)
+static void	copy_registration(int **new_ps_register, int **old_ps_register)
 {
 	int	i;
 
