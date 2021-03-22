@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_print_register.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 16:50:04 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 18:00:25 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/22 21:26:21 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	ps_print_register(void)
 	int	*ps_register;
 	int	i;
 
+	if (*get_option() & DEBUG_FLAG || *get_option() & DEBUG_HOR_FLAG)
+		print_ps_two_stacks(*get_two_stacks(), *get_option());
 	ps_register = *ps_get_register();
 	i = 0;
 	while (*ps_register)

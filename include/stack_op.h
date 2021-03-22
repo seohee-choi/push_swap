@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_op.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 20:03:06 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 17:51:59 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/22 20:58:18 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 
 # define SO_INT_MAX (2147483647)
 # define SO_INT_MIN (-2147483648)
+
+# define CH_ERROR -1
+
+# define DEBUG_FLAG 0b00000001
+# define DEBUG_HOR_FLAG 0b00000010
+# define COLOR_FLAG 0b00000100
+# define FILE_FLAG 0b00001000
+# define MAN_FLAG 0b00010000
 
 # include <stdio.h>
 # include <stdbool.h>
@@ -60,7 +68,7 @@ t_ps_node		*new_ps_node(int element);
 void			add_ps_node_bottom(t_ps_node **top, t_ps_node *new_node);
 void			delete_ps_node_list(t_ps_node *node);
 void			print_ps_node_list(t_ps_node *top);
-void			print_ps_two_stacks(t_two_stacks *two_stacks);
+void			print_ps_two_stacks(t_two_stacks *two_stacks, int option);
 
 /*
 ** functions of so_operate_push.c / so_operate_rrotate.c / so_operate_rotate.c /
@@ -93,5 +101,7 @@ void			so_swap_stack(t_ps_node **top);
 
 t_two_stacks	**get_two_stacks(void);
 void			set_two_stacks(t_two_stacks *two_stacks);
+
+int     option_check(char **argv, int *option);
 
 #endif
