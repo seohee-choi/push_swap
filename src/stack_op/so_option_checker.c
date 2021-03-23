@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_option_checker.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 21:37:01 by seohchoi          #+#    #+#             */
-/*   Updated: 2021/03/22 21:40:41 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/22 23:21:27 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,13 @@ int	option_check(char **argv, int *option)
 {
 	int i;
 
-	i = 1;
-	while (argv[i][0] == '-')
+	i = 0;
+	while (argv[++i][0] == '-')
 	{
 		if (ft_strcmp("-v", argv[i]) && ft_strcmp("-c", argv[i]) && \
 		ft_strcmp("-f", argv[i]) && ft_strcmp("-m", argv[i]) && \
 		ft_strcmp("-vw", argv[i]))
-		{
-			print_error();
-			return (CH_ERROR);
-		}
+			return (print_error() + CH_ERROR);
 		else if (ft_strcmp("-v", argv[i]) == 0)
 			*option |= DEBUG_FLAG;
 		else if (ft_strcmp("-vw", argv[i]) == 0)
@@ -37,11 +34,7 @@ int	option_check(char **argv, int *option)
 		else if (ft_strcmp("-m", argv[i]) == 0)
 			*option |= MAN_FLAG;
 		if (*option & DEBUG_FLAG && *option & DEBUG_HOR_FLAG)
-		{
-			print_error();
-			return (CH_ERROR);
-		}
-		i++;
+			return (print_error() + CH_ERROR);
 	}
 	return (i);
 }

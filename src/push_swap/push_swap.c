@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:27:19 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 21:26:13 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/22 23:30:36 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ int	push_swap(int argc, char **argv, int option, int option_num)
 int	main(int argc, char **argv)
 {
 	int	option;
-	int option_num;
-	
+	int	option_num;
+
 	if (argc == 1)
 		return (1);
 	option_num = option_check(argv, &option);

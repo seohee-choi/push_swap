@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:33:28 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 21:00:29 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/22 23:19:24 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@
 void	check_result(t_two_stacks *two_stacks);
 int		checker(int argc, char **argv, int option, int option_num);
 bool	do_operation(char *line);
-void    ch_print_manual(void);
+void	ch_print_manual(void);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:52:43 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 21:19:35 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/22 23:18:42 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,13 +94,12 @@ int		ps_sort_below_three(int num, int stack_name);
 int		ps_sort_size_three(void);
 int		ps_sort_size_five(int list[]);
 
-
 /*
 ** ps_option.c
 */
 
 void	set_option(int option);
-int     *get_option(void);
-void    ps_print_manual(void);
+int		*get_option(void);
+void	ps_print_manual(void);
 
 #endif

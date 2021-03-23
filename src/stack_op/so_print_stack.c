@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_print_stack.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 22:02:11 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 21:41:34 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/22 23:35:10 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,18 @@ bool *a_is_top, bool *b_is_top)
 {
 	t_two_stacks	*two_stacks;
 
+	ft_putstr_fd("\nA\tB", STDOUT_FILENO);
 	two_stacks = *get_two_stacks();
-	ft_putstr_fd("\n", STDERR_FILENO);
+	ft_putstr_fd("\n", STDOUT_FILENO);
 	if (*a_is_top == false)
 	{
-		ft_putnbr_fd((*curr_a)->element, STDERR_FILENO);
+		ft_putnbr_fd((*curr_a)->element, STDOUT_FILENO);
 		*curr_a = (*curr_a)->down_node;
 	}
 	if (*b_is_top == false)
 	{
 		write(1, "\t", 1);
-		ft_putnbr_fd((*curr_b)->element, STDERR_FILENO);
+		ft_putnbr_fd((*curr_b)->element, STDOUT_FILENO);
 		(*curr_b) = (*curr_b)->down_node;
 	}
 	if (*curr_a == two_stacks->a_top)
@@ -39,23 +40,23 @@ bool *a_is_top, bool *b_is_top)
 static void	print_elements_horizontal(\
 t_ps_node **curr_a, t_ps_node **curr_b, bool *a_is_top, bool *b_is_top)
 {
-	t_two_stacks *two_stacks;
+	t_two_stacks	*two_stacks;
 
 	two_stacks = *get_two_stacks();
-	ft_putstr_fd("\n A : ", STDERR_FILENO);
+	ft_putstr_fd("\n A : ", STDOUT_FILENO);
 	while (*a_is_top == false)
 	{
-		ft_putnbr_fd((*curr_a)->element, STDERR_FILENO);
-		ft_putstr_fd(" ", STDERR_FILENO);
+		ft_putnbr_fd((*curr_a)->element, STDOUT_FILENO);
+		ft_putstr_fd(" ", STDOUT_FILENO);
 		*curr_a = (*curr_a)->down_node;
 		if (*curr_a == two_stacks->a_top)
 			*a_is_top = true;
 	}
-	ft_putstr_fd("\n\n B : ", STDERR_FILENO);
+	ft_putstr_fd("\n\n B : ", STDOUT_FILENO);
 	while (*b_is_top == false)
 	{
-		ft_putnbr_fd((*curr_b)->element, STDERR_FILENO);
-		ft_putstr_fd(" ", STDERR_FILENO);
+		ft_putnbr_fd((*curr_b)->element, STDOUT_FILENO);
+		ft_putstr_fd(" ", STDOUT_FILENO);
 		(*curr_b) = (*curr_b)->down_node;
 		if (*curr_b == two_stacks->b_top)
 			*b_is_top = true;
@@ -79,15 +80,12 @@ void	print_ps_two_stacks(t_two_stacks *two_stacks, int option)
 		a_is_top = true;
 	if (!curr_b)
 		b_is_top = true;
-	ft_putstr_fd("----------", STDERR_FILENO);
+	ft_putstr_fd("----------", STDOUT_FILENO);
 	if (option & DEBUG_HOR_FLAG)
 		print_elements_horizontal(&curr_a, &curr_b, &a_is_top, &b_is_top);
 	else
-	{
-		ft_putstr_fd("\nA\tB", STDERR_FILENO);
 		while (a_is_top == false || b_is_top == false)
 			print_elements(&curr_a, &curr_b, &a_is_top, &b_is_top);
-	}
-	ft_putstr_fd("\n----------\n", STDERR_FILENO);
+	ft_putstr_fd("\n----------\n", STDOUT_FILENO);
 	return ;
 }

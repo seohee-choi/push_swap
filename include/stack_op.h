@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_op.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 20:03:06 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 20:58:18 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/22 23:19:53 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,6 @@ void			so_swap_stack(t_ps_node **top);
 t_two_stacks	**get_two_stacks(void);
 void			set_two_stacks(t_two_stacks *two_stacks);
 
-int     option_check(char **argv, int *option);
+int				option_check(char **argv, int *option);
 
 #endif
