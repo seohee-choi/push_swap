@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:31:02 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 23:27:41 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/25 02:58:26 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	get_operation(int option)
 		print_ps_two_stacks(*get_two_stacks(), option);
 	free(line);
 	if (ret == false)
-		return (print_error() + CH_ERROR);
+		return ((int)print_error() + CH_ERROR);
 	return (true);
 }
 
@@ -85,7 +85,7 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (0);
 	option_num = option_check(argv, &option);
-	if (option_num == CH_ERROR)
+	if (option_num == CH_ERROR || argc == option_num)
 		return (-1);
 	ret = checker(argc, argv, option, option_num);
 	return (ret);
