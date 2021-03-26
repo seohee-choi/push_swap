@@ -1,14 +1,19 @@
 .PHONY: all ch ps gnl libft test clean fclean help bonus rebonus debug objdel
 .DEFAULT_GOAL = help
 
-NAME = $(CHECKER) $(PUSH_SWAP)
+
+NAME = $(SO_A) $(CHECKER_FILE) $(PUSH_SWAP_FILE)
+CHECKER_FILE = checker$(BONUS)
+PUSH_SWAP_FILE = push_swap$(BONUS)
 CHECKER = checker
 PUSH_SWAP = push_swap
 
-all: gnl libft $(NAME) ## compile the program
+all: $(eval BONUS := )gnl libft $(NAME) ## compile the program
 
-ch: gnl libft $(CHECKER)
-ps: gnl libft $(PUSH_SWAP)
+bonus: $(eval BONUS := _bonus) gnl libft $(NAME)
+
+ch: gnl libft $(SO_A) $(CHECKER_FILE)
+ps: gnl libft $(SO_A) $(PUSH_SWAP_FILE)
 
 CC = gcc
 AR = ar
@@ -41,7 +46,6 @@ SO_SRC = \
 	so_print_stack.c \
 	so_push_pop_rotate.c \
 	so_set_two_stacks.c
-	# so_operation.c
 SO_SRC_DIR = $(SRC_DIR)/$(STACK_OP)/
 SO_SRCS = $(addprefix $(SO_SRC_DIR),$(SO_SRC))
 SO_SRCS_DIR = $(dir $(SO_SRCS))
@@ -55,7 +59,7 @@ CH_SRC = \
 	ch_do_operation.c \
 	ch_option.c \
 	ch_result_check.c \
-	checker.c
+	checker$(BONUS).c
 CH_SRC_DIR = $(SRC_DIR)/$(CHECKER)/
 CH_SRCS = $(addprefix $(CH_SRC_DIR),$(CH_SRC))
 CH_SRCS_DIR = $(dir $(CH_SRCS))
@@ -101,10 +105,10 @@ libft:
 $(SO_A): $(SO_OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
-$(CHECKER): $(CH_OBJS) $(SO_A)
+$(CHECKER_FILE): $(CH_OBJS) $(SO_A)
 	$(CC) $(CFLAGS) $(LFLAGS) $(IFLAGS) -o $@ $(CH_OBJS)
 
-$(PUSH_SWAP): $(PS_OBJS) $(SO_A)
+$(PUSH_SWAP_FILE): $(PS_OBJS) $(SO_A)
 	$(CC) $(CFLAGS) $(LFLAGS) $(IFLAGS) -o $@ $(PS_OBJS)
 
 $(SO_OBJ_DIR)%.o: $(SO_SRC_DIR)%.c
