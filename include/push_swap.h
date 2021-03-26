@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:52:43 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 23:18:42 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/26 21:54:54 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ int		ps_register_operation(bool (*op)(void));
 ** functions of ps_simulator.c
 */
 
+void	ps_sort_split_a_init(int list[], int top, int bottom);
 void	ps_sort_split_a(int list[], int top, int bottom);
 void	ps_sort_split_b(int list[], int top, int bottom);
 

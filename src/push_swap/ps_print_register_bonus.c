@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_print_register.c                                :+:      :+:    :+:   */
+/*   ps_print_register_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 16:50:04 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/26 22:00:44 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/26 22:01:06 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	ps_print_register(void)
 	int	*ps_register;
 	int	i;
 
+	if (*get_option() & DEBUG_FLAG || *get_option() & DEBUG_HOR_FLAG)
+		print_ps_two_stacks(*get_two_stacks(), *get_option());
 	ps_register = *ps_get_register();
 	i = 0;
 	while (*ps_register)

@@ -1,19 +1,18 @@
 .PHONY: all ch ps gnl libft test clean fclean help bonus rebonus debug objdel
 .DEFAULT_GOAL = help
 
-
-NAME = $(SO_A) $(CHECKER_FILE) $(PUSH_SWAP_FILE)
-CHECKER_FILE = checker$(BONUS)
-PUSH_SWAP_FILE = push_swap$(BONUS)
+NAME = $(CHECKER) $(PUSH_SWAP)
+BONUS = $(CHECKER_B) $(PUSH_SWAP_B)
 CHECKER = checker
+CHECKER_B = checker_bonus
 PUSH_SWAP = push_swap
+PUSH_SWAP_B = push_swap_bonus
 
-all: $(eval BONUS := )gnl libft $(NAME) ## compile the program
+all: gnl libft $(NAME) ## compile the program
+bonus: gnl libft $(BONUS)
 
-bonus: $(eval BONUS := _bonus) gnl libft $(NAME)
-
-ch: gnl libft $(SO_A) $(CHECKER_FILE)
-ps: gnl libft $(SO_A) $(PUSH_SWAP_FILE)
+ch: gnl libft $(CHECKER)
+ps: gnl libft $(PUSH_SWAP)
 
 CC = gcc
 AR = ar
@@ -35,7 +34,6 @@ SO_A = lib$(STACK_OP).a
 
 
 SO_SRC = \
-	so_option_checker.c \
 	so_init_stack.c \
 	so_init_utils.c \
 	so_node_utils.c \
@@ -43,6 +41,7 @@ SO_SRC = \
 	so_operate_rotate.c \
 	so_operate_rrotate.c \
 	so_operate_swap.c \
+	so_option_checker.c \
 	so_print_stack.c \
 	so_push_pop_rotate.c \
 	so_set_two_stacks.c
@@ -57,23 +56,29 @@ SO_OBJS_DIR = $(dir $(SO_OBJS))
 
 CH_SRC = \
 	ch_do_operation.c \
+	ch_result_check.c \
+	checker.c
+CH_SRC_B = \
+	ch_do_operation.c \
 	ch_option.c \
 	ch_result_check.c \
-	checker$(BONUS).c
+	checker_bonus.c
 CH_SRC_DIR = $(SRC_DIR)/$(CHECKER)/
 CH_SRCS = $(addprefix $(CH_SRC_DIR),$(CH_SRC))
+CH_SRCS_B = $(addprefix $(CH_SRC_DIR),$(CH_SRC_B))
 CH_SRCS_DIR = $(dir $(CH_SRCS))
 
 CH_OBJ = $(CH_SRC:%.c=%.o)
+CH_OBJ_B = $(CH_SRC_B:%.c=%.o)
 CH_OBJ_DIR = $(OBJ_DIR)/$(CHECKER)/
 CH_OBJS = $(addprefix $(CH_OBJ_DIR),$(CH_OBJ))
+CH_OBJS_B = $(addprefix $(CH_OBJ_DIR),$(CH_OBJ_B))
 CH_OBJS_DIR = $(dir $(CH_OBJS))
 
 SRCS_DIR = $(SO_SRCS_DIR)
 OBJS_DIR = $(SO_OBJ_DIR) $(CH_OBJ_DIR)
 
 PS_SRC = \
-	ps_option.c \
 	ps_init_list.c \
 	ps_print_register.c \
 	ps_register_operation.c \
@@ -84,12 +89,27 @@ PS_SRC = \
 	ps_size_three.c \
 	push_swap.c \
 	quick_sort.c
+PS_SRC_B = \
+	ps_init_list.c \
+	ps_option_bonus.c \
+	ps_print_register_bonus.c \
+	ps_register_operation_bonus.c \
+	ps_simulator_few.c \
+	ps_simulator.c \
+	ps_simulator_utils.c \
+	ps_size_five.c \
+	ps_size_three.c \
+	push_swap_bonus.c \
+	quick_sort.c
 PS_SRC_DIR = $(SRC_DIR)/$(PUSH_SWAP)/
 PS_SRCS = $(addprefix $(PS_SRC_DIR),$(PS_SRC))
+PS_SRCS_B = $(addprefix $(PS_SRC_DIR),$(PS_SRC_B))
 
 PS_OBJ = $(PS_SRC:%.c=%.o)
+PS_OBJ_B = $(PS_SRC_B:%.c=%.o)
 PS_OBJ_DIR = $(OBJ_DIR)/$(PUSH_SWAP)/
 PS_OBJS = $(addprefix $(PS_OBJ_DIR),$(PS_OBJ))
+PS_OBJS_B = $(addprefix $(PS_OBJ_DIR),$(PS_OBJ_B))
 
 GNL = gnl
 GNL_DIR = ./get_next_line
@@ -105,11 +125,17 @@ libft:
 $(SO_A): $(SO_OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
-$(CHECKER_FILE): $(CH_OBJS) $(SO_A)
+$(CHECKER): $(CH_OBJS) $(SO_A)
 	$(CC) $(CFLAGS) $(LFLAGS) $(IFLAGS) -o $@ $(CH_OBJS)
 
-$(PUSH_SWAP_FILE): $(PS_OBJS) $(SO_A)
+$(CHECKER_B): $(CH_OBJS_B) $(SO_A)
+	$(CC) $(CFLAGS) $(LFLAGS) $(IFLAGS) -o $@ $(CH_OBJS_B)
+
+$(PUSH_SWAP): $(PS_OBJS) $(SO_A)
 	$(CC) $(CFLAGS) $(LFLAGS) $(IFLAGS) -o $@ $(PS_OBJS)
+
+$(PUSH_SWAP_B): $(PS_OBJS_B) $(SO_A)
+	$(CC) $(CFLAGS) $(LFLAGS) $(IFLAGS) -o $@ $(PS_OBJS_B)
 
 $(SO_OBJ_DIR)%.o: $(SO_SRC_DIR)%.c
 	mkdir -p $(dir $@)
@@ -129,7 +155,7 @@ clean: ## delete all files compiled except for executable
 	$(MK) clean $(MFLAGS) $(LIBFT_DIR)
 
 fclean: clean ## delete all files compiled including executable
-	rm -rf $(NAME)
+	rm -rf $(NAME) $(BONUS)
 
 re: fclean all ## delete all files compiled and recompile
 

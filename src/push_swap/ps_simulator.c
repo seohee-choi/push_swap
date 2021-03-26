@@ -32,6 +32,37 @@ int *n_ra, int *n_rb)
 	}
 }
 
+void	ps_sort_split_a_init(int list[], int top, int bottom)
+{
+	int				i;
+	t_two_stacks	*two_stacks;
+
+	two_stacks = *get_two_stacks();
+	if (bottom - top <= 3)
+	{
+		ps_sort_below_three(bottom - top, STACK_A);
+		return ;
+	}
+	i = -1;
+	while (++i < bottom - top)
+	{
+		if (two_stacks->a_top->element >= list[pivot_big(top, bottom)])
+			ps_register_operation(so_ra);
+		else
+		{
+			ps_register_operation(so_pb);
+			if (two_stacks->b_top->element < list[pivot_small(top, bottom)])
+			{
+				if (two_stacks->b_top->down_node != two_stacks->b_top)
+					ps_register_operation(so_rb);
+			}
+		}
+	}
+	ps_sort_split_a(list, pivot_big(top, bottom), bottom);
+	ps_sort_split_b(list, pivot_small(top, bottom), pivot_big(top, bottom));
+	ps_sort_split_b(list, top, pivot_small(top, bottom));
+}
+
 void	ps_sort_split_a(int list[], int top, int bottom)
 {
 	int				n_ra;
