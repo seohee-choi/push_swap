@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_option.c                                        :+:      :+:    :+:   */
+/*   ps_option_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 21:39:05 by seohchoi          #+#    #+#             */
-/*   Updated: 2021/03/22 21:39:19 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/27 21:58:22 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	set_option(int option)
 void	ps_print_manual(void)
 {
 	ft_putstr_fd("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n", 1);
-	ft_putstr_fd("~~~~~~~~~~~~~checker man page~~~~~~~~~~~\n", 1);
+	ft_putstr_fd("~~~~~~~~~~~push_swap man page~~~~~~~~~~\n", 1);
 	ft_putstr_fd("0. Do nothing if there is only one or no elements.\n", 1);
 	ft_putstr_fd("1. sa : swap a - swap the first 2 elements at the top of", 1);
 	ft_putstr_fd(" stack a.\n", 1);
