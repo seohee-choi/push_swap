@@ -1,5 +1,5 @@
 .PHONY: all ch ps gnl libft test clean fclean help bonus rebonus debug objdel
-# .DEFAULT_GOAL = help
+.DEFAULT_GOAL = all
 
 NAME = $(CHECKER) $(PUSH_SWAP)
 BONUS = $(CHECKER_B) $(PUSH_SWAP_B)
