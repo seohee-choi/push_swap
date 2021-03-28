@@ -6,27 +6,11 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:27:19 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/26 21:57:21 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/28 20:13:37 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	print_list(int list[], int argc)
-{
-	int		i;
-	char	*str;
-
-	i = 0;
-	while (i < argc)
-	{
-		str = ft_itoa(list[i]);
-		write(1, str, ft_strlen(str));
-		write(1, "\n", 1);
-		free(str);
-		i++;
-	}
-}
 
 int	push_swap(int argc, char **argv)
 {

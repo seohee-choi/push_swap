@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:31:02 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/28 19:31:02 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/28 20:03:17 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ int	main(int argc, char **argv)
 	int	option;
 	int option_num;
 
+	option = 0;
 	if (argc == 1)
 		return (0);
 	option_num = option_check(argv, &option);

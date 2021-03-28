@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:27:19 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/28 19:29:41 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/28 20:23:23 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,6 @@ int		print_to_file(char **argv)
 	return ((int)print_error() + CH_ERROR);
 }
 
-void	print_list(int list[], int argc)
-{
-	int		i;
-	char	*str;
-
-	i = 0;
-	while (i < argc)
-	{
-		str = ft_itoa(list[i]);
-		write(1, str, ft_strlen(str));
-		write(1, "\n", 1);
-		free(str);
-		i++;
-	}
-}
-
 static int	push_swap(int argc, char **argv, int option_num)
 {
 	t_two_stacks	*two_stacks;
@@ -62,7 +46,7 @@ static int	push_swap(int argc, char **argv, int option_num)
 	two_stacks = so_init_stacks(argc - option_num, &argv[option_num]);
 	if (!two_stacks)
 		return (1);
-	list = ft_calloc(argc - option_num + 1, sizeof(int));
+	list = ft_calloc(argc - option_num, sizeof(int));
 	if (!list)
 		return (-1);
 	ps_init_list(list, two_stacks->a_top);
@@ -71,7 +55,7 @@ static int	push_swap(int argc, char **argv, int option_num)
 	if (argc - option_num == 3)
 		ps_sort_size_three();
 	else
-		ps_sort_split_a_init(list, 0, argc - 1);
+		ps_sort_split_a_init(list, 0, argc - option_num);
 	ps_print_register();
 	clear_ps_stack(two_stacks);
 	free(list);
