@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_print_stack.c                                   :+:      :+:    :+:   */
+/*   ch_print_stack_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 22:02:11 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/26 12:14:40 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/28 19:40:28 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ bool *a_is_top, bool *b_is_top)
 {
 	t_two_stacks	*two_stacks;
 
+	system("clear");
 	two_stacks = *get_two_stacks();
 	ft_putstr_fd("\nA\tB", STDOUT_FILENO);
 	while (*a_is_top == false || *b_is_top == false)
@@ -38,6 +39,7 @@ bool *a_is_top, bool *b_is_top)
 		if (*curr_b == two_stacks->b_top)
 			*b_is_top = true;
 	}
+	usleep(10000);
 }
 
 static void	print_elements_horizontal(t_ps_node **curr_a, \
@@ -45,6 +47,7 @@ t_ps_node **curr_b, bool *a_is_top, bool *b_is_top)
 {
 	t_two_stacks	*two_stacks;
 
+	system("clear");
 	two_stacks = *get_two_stacks();
 	ft_putstr_fd("\n A : ", STDOUT_FILENO);
 	while (*a_is_top == false)
@@ -64,6 +67,7 @@ t_ps_node **curr_b, bool *a_is_top, bool *b_is_top)
 		if (*curr_b == two_stacks->b_top)
 			*b_is_top = true;
 	}
+	usleep(10000);
 }
 
 void	print_ps_two_stacks(t_two_stacks *two_stacks, int option)

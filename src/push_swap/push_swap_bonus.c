@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:27:19 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/28 19:19:48 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/28 19:29:41 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	print_list(int list[], int argc)
 	}
 }
 
-int	push_swap(int argc, char **argv, int option, int option_num)
+static int	push_swap(int argc, char **argv, int option_num)
 {
 	t_two_stacks	*two_stacks;
 	int				*list;
@@ -100,7 +100,7 @@ int	main(int argc, char **argv)
 		if (print_to_file(argv) == CH_ERROR)
 			return (-1);
 	}
-	if (push_swap(argc, argv, option, option_num))
+	if (push_swap(argc, argv, option_num))
 		return (1);
 	return (0);
 }

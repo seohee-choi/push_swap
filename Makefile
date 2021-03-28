@@ -42,7 +42,6 @@ SO_SRC = \
 	so_operate_rrotate.c \
 	so_operate_swap.c \
 	so_option_checker.c \
-	so_print_stack.c \
 	so_push_pop_rotate.c \
 	so_set_two_stacks.c
 SO_SRC_DIR = $(SRC_DIR)/$(STACK_OP)/
@@ -61,6 +60,7 @@ CH_SRC = \
 CH_SRC_B = \
 	ch_do_operation.c \
 	ch_option_bonus.c \
+	ch_print_stack_bonus.c \
 	ch_result_check.c \
 	checker_bonus.c
 CH_SRC_DIR = $(SRC_DIR)/$(CHECKER)/
@@ -92,6 +92,7 @@ PS_SRC = \
 PS_SRC_B = \
 	ps_init_list.c \
 	ps_option_bonus.c \
+	ps_print_stack_bonus.c \
 	ps_print_register_bonus.c \
 	ps_register_operation_bonus.c \
 	ps_simulator_few.c \

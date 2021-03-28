@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 16:50:04 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/28 17:44:52 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/28 19:40:48 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,9 @@ void	ps_print_register(void)
 	ps_register = *ps_get_register();
 	i = 0;
 	while (*ps_register)
+	{
 		ps_register += printer(ps_register);
+	}
 	ps_register = *ps_get_register();
 	free(ps_register);
 	return ;
