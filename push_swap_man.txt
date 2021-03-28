@@ -1,7 +1,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~checker manual~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~push_swap manual~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-checker will receives operations, which are defined by GAME RULES below, by standard input. The goal is to arrange numbers in stack a in descending order. any input that is not an operation will cause an error. when the input is over, you can type ctrl-D to let the program know. if the numbers are ordered, the program will display OK. any other cases, it will display KO.
+push_swap receives numbers from arguments and calculate operations defined by GAME RULES. Arguments must be integers, and must not be duplicated. operations will be shown on standard output, and can be handed over to checker by pipe, for validation.
 
 GAME RULES
 
@@ -19,5 +19,5 @@ GAME RULES
 OPTIONS
 
 -m	manual opion. show this manual.
--v	debug option. the result of each operation will be displayed on screen. at the end of the operations, the program will tell you how many operations you have done. each stack will be seen vertically.
+-v	debug option. the result of each operation will be displayed on screen.
 -vw	debug wide option. same as -v, but each stack will be seen horizontally.

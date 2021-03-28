@@ -6,11 +6,35 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:31:02 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/26 15:31:25 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/28 16:51:43 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+#include <sys/stat.h>
+#include <fcntl.h>
+
+static int	input_from_file(char **argv)
+{
+	int	fd;
+	int	i;
+
+	i = 0;
+	while (argv[i])
+	{
+		if (!ft_strcmp("-f", argv[i]))
+		{
+			fd = open(argv[i + 1], O_RDONLY);
+			if (fd == -1)
+				return ((int)print_error() + CH_ERROR);
+			dup2(fd, STDIN_FILENO);
+			close(fd);
+			return (0);
+		}
+		i++;
+	}
+	return ((int)print_error() + CH_ERROR);
+}
 
 static int	get_operation(int option)
 {
@@ -85,6 +109,9 @@ int	main(int argc, char **argv)
 	option_num = option_check(argv, &option);
 	if (option & MAN_FLAG)
 		ch_print_manual();
+	if (option & FILE_FLAG)
+		if (input_from_file(argv) == CH_ERROR)
+			return (-1);
 	if (option_num == CH_ERROR || argc == option_num)
 		return (-1);
 	ret = checker(argc, argv, option, option_num);

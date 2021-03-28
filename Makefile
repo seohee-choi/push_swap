@@ -60,7 +60,7 @@ CH_SRC = \
 	checker.c
 CH_SRC_B = \
 	ch_do_operation.c \
-	ch_option.c \
+	ch_option_bonus.c \
 	ch_result_check.c \
 	checker_bonus.c
 CH_SRC_DIR = $(SRC_DIR)/$(CHECKER)/
