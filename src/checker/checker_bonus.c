@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:31:02 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/28 20:03:17 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/28 21:24:51 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-static int	input_from_file(char **argv)
+static int			input_from_file(char **argv)
 {
-	int	fd;
-	int	i;
+	int				fd;
+	int				i;
 
 	i = 0;
 	while (argv[i])
@@ -36,10 +36,10 @@ static int	input_from_file(char **argv)
 	return ((int)print_error() + CH_ERROR);
 }
 
-static int	get_operation(int option)
+static int			get_operation(int option)
 {
-	int		ret;
-	char	*line;
+	int				ret;
+	char			*line;
 
 	line = NULL;
 	ret = get_next_line(STDIN_FILENO, &line);
@@ -63,14 +63,14 @@ static int	get_operation(int option)
 	return (true);
 }
 
-void	print_operation_times(int times)
+void				print_operation_times(int times)
 {
 	ft_putstr_fd("operations: ", STDOUT_FILENO);
 	ft_putnbr_fd(times, STDOUT_FILENO);
 	ft_putendl_fd(" times", STDOUT_FILENO);
 }
 
-int	checker(int argc, char **argv, int option, int option_num)
+int					checker(int argc, char **argv, int option, int option_num)
 {
 	t_two_stacks	*two_stacks;
 	int				times;
@@ -98,11 +98,11 @@ int	checker(int argc, char **argv, int option, int option_num)
 	return (0);
 }
 
-int	main(int argc, char **argv)
+int					main(int argc, char **argv)
 {
-	int	ret;
-	int	option;
-	int option_num;
+	int				ret;
+	int				option;
+	int				option_num;
 
 	option = 0;
 	if (argc == 1)

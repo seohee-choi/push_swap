@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:31:02 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/28 16:19:31 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/28 21:26:43 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static int	get_operation(void)
+static int			get_operation(void)
 {
-	int		ret;
-	char	*line;
+	int				ret;
+	char			*line;
 
 	line = NULL;
 	ret = get_next_line(STDIN_FILENO, &line);
@@ -37,7 +37,7 @@ static int	get_operation(void)
 	return (true);
 }
 
-static int	checker(int argc, char **argv)
+static int			checker(int argc, char **argv)
 {
 	t_two_stacks	*two_stacks;
 	int				ret;
@@ -56,9 +56,9 @@ static int	checker(int argc, char **argv)
 	return (0);
 }
 
-int	main(int argc, char **argv)
+int					main(int argc, char **argv)
 {
-	int	ret;
+	int				ret;
 
 	if (argc == 1)
 		return (0);

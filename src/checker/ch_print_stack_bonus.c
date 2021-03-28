@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ch_print_stack_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 22:02:11 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/28 19:40:28 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/28 21:25:55 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack_op.h"
 
-static void	print_elements(t_ps_node **curr_a, t_ps_node **curr_b, \
+static void			print_elements(t_ps_node **curr_a, t_ps_node **curr_b, \
 bool *a_is_top, bool *b_is_top)
 {
 	t_two_stacks	*two_stacks;
@@ -42,7 +42,7 @@ bool *a_is_top, bool *b_is_top)
 	usleep(10000);
 }
 
-static void	print_elements_horizontal(t_ps_node **curr_a, \
+static void			print_elements_horizontal(t_ps_node **curr_a, \
 t_ps_node **curr_b, bool *a_is_top, bool *b_is_top)
 {
 	t_two_stacks	*two_stacks;
@@ -70,12 +70,12 @@ t_ps_node **curr_b, bool *a_is_top, bool *b_is_top)
 	usleep(10000);
 }
 
-void	print_ps_two_stacks(t_two_stacks *two_stacks, int option)
+void				print_ps_two_stacks(t_two_stacks *two_stacks, int option)
 {
-	t_ps_node	*curr_a;
-	t_ps_node	*curr_b;
-	bool		a_is_top;
-	bool		b_is_top;
+	t_ps_node		*curr_a;
+	t_ps_node		*curr_b;
+	bool			a_is_top;
+	bool			sb_is_top;
 
 	if (!two_stacks)
 		return ;

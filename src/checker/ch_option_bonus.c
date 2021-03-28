@@ -1,8 +1,18 @@
-#include "checker.h"
-#include <sys/stat.h>
-#include <fcntl.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ch_option_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/28 21:25:59 by seohchoi          #+#    #+#             */
+/*   Updated: 2021/03/28 21:28:08 by seohchoi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	ch_print_manual(void)
+#include "checker.h"
+
+void		ch_print_manual(void)
 {
 	int		fd;
 	char	buffer[BUFFER_SIZE];
@@ -16,7 +26,7 @@ void	ch_print_manual(void)
 	{
 		rd_size = read(fd, buffer, BUFFER_SIZE);
 		if (rd_size == -1)
-			return;
+			return ;
 		write(STDOUT_FILENO, buffer, rd_size);
 	}
 	write(STDOUT_FILENO, "\n", 1);

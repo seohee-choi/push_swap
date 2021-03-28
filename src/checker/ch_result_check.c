@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ch_result_check.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 20:42:40 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 18:01:14 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/28 21:24:59 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	check_result(t_two_stacks *two_stacks)
+void			check_result(t_two_stacks *two_stacks)
 {
 	t_ps_node	*node;
 
