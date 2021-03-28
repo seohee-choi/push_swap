@@ -21,3 +21,4 @@ OPTIONS
 -m	manual opion. show this manual.
 -v	debug option. the result of each operation will be displayed on screen.
 -vw	debug wide option. same as -v, but each stack will be seen horizontally.
+-f	put output into a file. a name of the file should be handed over after the flag.

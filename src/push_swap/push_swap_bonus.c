@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:27:19 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/28 17:47:19 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/28 19:19:48 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,6 @@ int	push_swap(int argc, char **argv, int option, int option_num)
 	ps_init_list(list, two_stacks->a_top);
 	quick_sort(list, 0, argc - option_num - 1);
 	set_two_stacks(two_stacks);
-	if (option & MAN_FLAG)
-		ps_print_manual();
 	if (argc - option_num == 3)
 		ps_sort_size_three();
 	else
@@ -95,6 +93,8 @@ int	main(int argc, char **argv)
 		return (-1);
 	if (argc == option_num)
 		return ((int)print_error() - 1);
+	if (option & MAN_FLAG)
+		ps_print_manual();
 	if (option & FILE_FLAG)
 	{
 		if (print_to_file(argv) == CH_ERROR)
