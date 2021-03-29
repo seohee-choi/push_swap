@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 14:40:46 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/16 19:58:30 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 16:07:56 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	iterater(t_list *lst, void (*f)(void *))
 	return ;
 }
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void		ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (lst == NULL)
 		return ;

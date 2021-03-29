@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:27:19 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/29 11:33:30 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 16:14:41 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include <err.h>
 
-int		print_to_file(char **argv)
+int			print_to_file(char **argv)
 {
 	int	fd;
 	int	i;
@@ -64,7 +64,7 @@ static int	push_swap(int argc, char **argv, int option_num)
 	return (0);
 }
 
-int	main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	int	option;
 	int	option_num;

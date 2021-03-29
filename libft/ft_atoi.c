@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 19:14:42 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/16 20:55:01 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 16:07:45 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	isspace(char c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	int			p;
 	long long	num;

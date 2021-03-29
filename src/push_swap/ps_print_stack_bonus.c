@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 22:02:11 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/28 19:41:20 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 16:16:25 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ t_ps_node **curr_b, bool *a_is_top, bool *b_is_top)
 	usleep(10000);
 }
 
-void	print_ps_two_stacks(t_two_stacks *two_stacks, int option)
+void		print_ps_two_stacks(t_two_stacks *two_stacks, int option)
 {
 	t_ps_node	*curr_a;
 	t_ps_node	*curr_b;

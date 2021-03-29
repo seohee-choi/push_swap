@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 21:39:05 by seohchoi          #+#    #+#             */
-/*   Updated: 2021/03/29 11:34:06 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 16:16:10 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
-int	*get_option(void)
+int		*get_option(void)
 {
 	static int	option = 0;
 

@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 16:11:52 by yongwkim          #+#    #+#             */
-/*   Updated: 2021/03/16 20:02:57 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 16:11:16 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static char	**free_arr(char **ret, int cnt)
 	return (0);
 }
 
-char	**ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
 	char		**ret;
 	int			cnt;

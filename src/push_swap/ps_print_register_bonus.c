@@ -6,13 +6,13 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 16:50:04 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/28 19:40:48 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 16:13:31 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	**ps_get_register(void)
+int			**ps_get_register(void)
 {
 	static int	*ps_register = NULL;
 
@@ -48,7 +48,7 @@ static int	printer(int *registration)
 	return (1);
 }
 
-void	ps_print_register(void)
+void		ps_print_register(void)
 {
 	int	*ps_register;
 	int	i;

@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 05:01:13 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/16 19:58:06 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 16:10:05 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	putdigit_re(int n, int fd)
 	write(fd, &digit, 1);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void		ft_putnbr_fd(int n, int fd)
 {
 	if (n < 0)
 		write(fd, "-", 1);

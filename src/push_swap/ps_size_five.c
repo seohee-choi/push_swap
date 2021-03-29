@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ps_size_five.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 13:21:02 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/29 15:51:22 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/29 16:13:13 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include			"push_swap.h"
+#include "push_swap.h"
 
 static int			get_key(int list[], int value)
 {

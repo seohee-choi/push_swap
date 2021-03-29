@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   so_init_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:47:36 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/27 19:10:42 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/29 16:16:54 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack_op.h"
 
-static bool	is_duplicated(t_ps_node *top, int n)
+static bool			is_duplicated(t_ps_node *top, int n)
 {
 	t_ps_node	*curr;
 
@@ -55,7 +55,7 @@ static t_two_stacks	*add_str_a_stack(t_two_stacks *two_stacks, char *num)
 	return (two_stacks);
 }
 
-t_two_stacks	*so_init_stacks(int count, char **numbers)
+t_two_stacks		*so_init_stacks(int count, char **numbers)
 {
 	t_two_stacks	*two_stacks;
 	int				i;
@@ -76,7 +76,7 @@ t_two_stacks	*so_init_stacks(int count, char **numbers)
 	return (two_stacks);
 }
 
-void	clear_ps_stack(t_two_stacks *two_stacks)
+void				clear_ps_stack(t_two_stacks *two_stacks)
 {
 	delete_ps_node_list(two_stacks->a_top);
 	delete_ps_node_list(two_stacks->b_top);

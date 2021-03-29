@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ch_print_stack_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 22:02:11 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/28 21:25:55 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/29 16:05:30 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void				print_ps_two_stacks(t_two_stacks *two_stacks, int option)
 	t_ps_node		*curr_a;
 	t_ps_node		*curr_b;
 	bool			a_is_top;
-	bool			sb_is_top;
+	bool			b_is_top;
 
 	if (!two_stacks)
 		return ;

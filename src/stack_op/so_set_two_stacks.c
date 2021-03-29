@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:05:03 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 17:39:33 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 16:13:20 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_two_stacks	**get_two_stacks(void)
 	return (&two_stacks);
 }
 
-void	set_two_stacks(t_two_stacks *two_stacks)
+void			set_two_stacks(t_two_stacks *two_stacks)
 {
 	t_two_stacks	**stack_setting;
 

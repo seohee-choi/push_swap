@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ch_option_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/28 21:25:59 by seohchoi          #+#    #+#             */
-/*   Updated: 2021/03/28 21:28:08 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/29 16:04:51 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+#include <sys/stat.h>
+#include <fcntl.h>
 
 void		ch_print_manual(void)
 {

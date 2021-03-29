@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 02:31:18 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/16 20:18:38 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 16:09:59 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static long long	get_scale(int n)
 	return (scale);
 }
 
-static char	get_digit(long long i, int scale)
+static char			get_digit(long long i, int scale)
 {
 	int	n;
 	int	tenpower;
@@ -60,7 +60,7 @@ static long long	write_num(long long i, int scale, char *num)
 	return (1);
 }
 
-char	*ft_itoa(long long n)
+char				*ft_itoa(long long n)
 {
 	char	*str;
 	int		scale;

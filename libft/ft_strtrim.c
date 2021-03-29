@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 15:50:22 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/16 20:18:55 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 16:11:09 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static char	*return_zero(void)
 	return (new);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	int		head;
 	int		tail;
