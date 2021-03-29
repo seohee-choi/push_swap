@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_op.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 20:03:06 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/28 21:27:28 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/29 11:35:40 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@
 
 # include <stdio.h>
 # include <stdbool.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 # include "libft.h"
 # include "get_next_line.h"
 

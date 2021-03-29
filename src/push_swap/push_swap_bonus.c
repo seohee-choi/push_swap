@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:27:19 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/28 20:23:23 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 11:33:30 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int		print_to_file(char **argv)
 	{
 		if (!ft_strcmp("-f", argv[i]))
 		{
-			fd = open(argv[i + 1], O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+			fd = open(argv[i + 1], O_WRONLY | O_CREAT, \
+			S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
 			if (fd == -1)
 				return ((int)print_error() + CH_ERROR);
 			dup2(fd, STDOUT_FILENO);

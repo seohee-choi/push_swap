@@ -52,10 +52,8 @@ void	ps_sort_split_a_init(int list[], int top, int bottom)
 		{
 			ps_register_operation(so_pb);
 			if (two_stacks->b_top->element < list[pivot_small(top, bottom)])
-			{
 				if (two_stacks->b_top->down_node != two_stacks->b_top)
 					ps_register_operation(so_rb);
-			}
 		}
 	}
 	ps_sort_split_a(list, pivot_big(top, bottom), bottom);

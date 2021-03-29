@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 21:39:05 by seohchoi          #+#    #+#             */
-/*   Updated: 2021/03/28 16:52:52 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 11:34:06 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	*get_option(void)
 {
-	static int option = 0;
+	static int	option = 0;
 
 	return (&option);
 }
@@ -43,7 +43,7 @@ void	ps_print_manual(void)
 	{
 		rd_size = read(fd, buffer, BUFFER_SIZE);
 		if (rd_size == -1)
-			return;
+			return ;
 		write(STDOUT_FILENO, buffer, rd_size);
 	}
 	write(STDOUT_FILENO, "\n", 1);

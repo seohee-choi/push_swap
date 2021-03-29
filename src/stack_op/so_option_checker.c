@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 21:37:01 by seohchoi          #+#    #+#             */
-/*   Updated: 2021/03/28 16:50:54 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 11:36:32 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	option_check(char **argv, int *option)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (argv[i] && argv[i][0] == '-')

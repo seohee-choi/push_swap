@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_register_operation.c                            :+:      :+:    :+:   */
+/*   ps_register_operation_bonus.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:42:36 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 21:27:57 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/29 11:32:15 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,5 @@ int	ps_register_operation(bool (*op)(void))
 		put_in_register(RRB);
 	else
 		put_in_register(RRR);
-	op();
-	return (1);
+	return (op());
 }
