@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_register_operation.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:42:36 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/28 16:19:34 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 17:42:33 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	put_in_register(int op)
 	return ;
 }
 
-int	ps_register_operation(bool (*op)(void))
+int			ps_register_operation(int (*op)(void))
 {
 	if (op == so_pa)
 		put_in_register(PA);

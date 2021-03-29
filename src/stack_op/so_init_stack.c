@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   so_init_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 18:47:36 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/29 16:16:54 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 17:41:49 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack_op.h"
 
-static bool			is_duplicated(t_ps_node *top, int n)
+static int			is_duplicated(t_ps_node *top, int n)
 {
 	t_ps_node	*curr;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_register_operation_bonus.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:42:36 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/29 16:10:16 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 17:42:25 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static void	put_in_register(int op)
 	return ;
 }
 
-int	ps_register_operation(bool (*op)(void))
+int			ps_register_operation(int (*op)(void))
 {
 	if (*get_option() & DEBUG_FLAG || *get_option() & DEBUG_HOR_FLAG)
 		print_ps_two_stacks(*get_two_stacks(), *get_option());

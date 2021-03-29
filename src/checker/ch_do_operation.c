@@ -6,13 +6,13 @@
 /*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 18:02:38 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/27 19:03:46 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/29 17:41:49 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-bool	do_operation(char *line)
+int	do_operation(char *line)
 {
 	if (ft_strcmp(line, "sa") == 0)
 		return (so_sa());

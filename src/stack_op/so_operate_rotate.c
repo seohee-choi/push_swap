@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   so_operate_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 18:02:00 by seohchoi          #+#    #+#             */
-/*   Updated: 2021/03/22 18:02:28 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 17:41:49 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack_op.h"
 
-bool	so_ra(void)
+int	so_ra(void)
 {
 	t_two_stacks	**two_stacks;
 
@@ -21,7 +21,7 @@ bool	so_ra(void)
 	return (true);
 }
 
-bool	so_rb(void)
+int	so_rb(void)
 {
 	t_two_stacks	**two_stacks;
 
@@ -30,7 +30,7 @@ bool	so_rb(void)
 	return (true);
 }
 
-bool	so_rr(void)
+int	so_rr(void)
 {
 	so_ra();
 	so_rb();

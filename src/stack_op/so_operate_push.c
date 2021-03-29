@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   so_operate_push.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:39:32 by seohchoi          #+#    #+#             */
-/*   Updated: 2021/03/19 23:12:07 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 17:41:49 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack_op.h"
 
-bool	so_pa(void)
+int	so_pa(void)
 {
 	t_two_stacks	**two_stacks;
 	t_ps_node		*node_taken;
@@ -25,7 +25,7 @@ bool	so_pa(void)
 	return (true);
 }
 
-bool	so_pb(void)
+int	so_pb(void)
 {
 	t_two_stacks	**two_stacks;
 	t_ps_node		*node_taken;

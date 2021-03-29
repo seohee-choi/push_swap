@@ -6,7 +6,7 @@
 /*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 17:04:31 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/29 15:51:37 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/29 17:41:49 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		min_num(int a, int b)
 	return (b);
 }
 
-void	ps_operate_n_times(int n, bool (*op)(void))
+void	ps_operate_n_times(int n, int (*op)(void))
 {
 	int	i;
 

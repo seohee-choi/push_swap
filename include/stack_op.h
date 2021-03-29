@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_op.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 20:03:06 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/29 16:17:50 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 17:45:20 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@
 
 # define CH_ERROR -1
 
-# define DEBUG_FLAG 0b00000001
-# define DEBUG_HOR_FLAG 0b00000010
-# define COLOR_FLAG 0b00000100
-# define FILE_FLAG 0b00001000
-# define MAN_FLAG 0b00010000
+# define DEBUG_FLAG 0x001
+# define DEBUG_HOR_FLAG 0x002
+# define COLOR_FLAG 0x004
+# define FILE_FLAG 0x008
+# define MAN_FLAG 0x010
 
 # include <stdio.h>
 # include <stdbool.h>
@@ -56,7 +56,7 @@ void					clear_ps_stack(t_two_stacks *two_stacks);
 ** and if it does, put the number into *n
 */
 
-bool					is_atoi(char *str, int *n);
+int						is_atoi(char *str, int *n);
 void					*print_error(void);
 void					*exit_error(void);
 
@@ -76,17 +76,17 @@ int option);
 ** functions of so_operate_push.c / so_operate_rrotate.c / so_operate_rotate.c /
 ** so_operate_swap.c
 */
-bool					so_pa(void);
-bool					so_pb(void);
-bool					so_ra(void);
-bool					so_rb(void);
-bool					so_rr(void);
-bool					so_rra(void);
-bool					so_rrb(void);
-bool					so_rrr(void);
-bool					so_sa(void);
-bool					so_sb(void);
-bool					so_ss(void);
+int						so_pa(void);
+int						so_pb(void);
+int						so_ra(void);
+int						so_rb(void);
+int						so_rr(void);
+int						so_rra(void);
+int						so_rrb(void);
+int						so_rrr(void);
+int						so_sa(void);
+int						so_sb(void);
+int						so_ss(void);
 /*
 ** functions of so_push_pop_rotate.c do operations on only one stack.
 */
