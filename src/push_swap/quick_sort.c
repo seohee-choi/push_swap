@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   quick_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:47:31 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 17:59:41 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 15:51:54 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static void	swap(int *a, int *b)
+static 	void	swap(int *a, int *b)
 {
 	int	temp;
 

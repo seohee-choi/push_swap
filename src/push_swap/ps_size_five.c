@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ps_size_five.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 13:21:02 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/29 11:36:22 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 15:51:22 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include			"push_swap.h"
 
-static int	get_key(int list[], int value)
+static int			get_key(int list[], int value)
 {
-	int	i;
+	int		i;
 
 	i = 0;
 	while (i < 5)
@@ -26,13 +26,7 @@ static int	get_key(int list[], int value)
 	return (-1);
 }
 
-// 5 4 1 2 3
-// 4 5 1 2 3
-// 5 4 1 3 2
-// 5 2 1 3 4
-// 3 1 2 5 4
-
-static int	ps_sort_size_five_second(int list[])
+static int			ps_sort_size_five_second(int list[])
 {
 	int				i;
 	int				pb_times;
@@ -55,7 +49,7 @@ static int	ps_sort_size_five_second(int list[])
 	return (0);
 }
 
-int	ps_sort_size_five(int list[])
+int					ps_sort_size_five(int list[])
 {
 	t_two_stacks	*two_stacks;
 
