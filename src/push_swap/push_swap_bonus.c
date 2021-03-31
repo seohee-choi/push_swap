@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:27:19 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/29 16:14:41 by jolim            ###   ########.fr       */
+/*   Updated: 2021/04/01 03:41:29 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,12 +74,10 @@ int			main(int argc, char **argv)
 	option = 0;
 	option_num = option_check(argv, &option);
 	set_option(option);
-	if (option_num == CH_ERROR)
-		return (-1);
-	if (argc == option_num)
-		return ((int)print_error() - 1);
 	if (option & MAN_FLAG)
 		ps_print_manual();
+	if (option_num == CH_ERROR || argc == option_num)
+		return (-1);
 	if (option & FILE_FLAG)
 	{
 		if (print_to_file(argv) == CH_ERROR)
