@@ -6,15 +6,28 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:27:19 by jolim             #+#    #+#             */
-/*   Updated: 2021/04/01 03:41:29 by jolim            ###   ########.fr       */
+/*   Updated: 2021/04/08 15:18:45 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <sys/stat.h>
 #include <fcntl.h>
-
 #include <err.h>
+
+static int	check_sorted(t_two_stacks *two_stacks)
+{
+	t_ps_node	*node;
+
+	node = two_stacks->a_top;
+	while (node->down_node != two_stacks->a_top)
+	{
+		if (node->element > node->down_node->element)
+			return (false);
+		node = node->down_node;
+	}
+	return (true);
+}
 
 int			print_to_file(char **argv)
 {
@@ -51,6 +64,8 @@ static int	push_swap(int argc, char **argv, int option_num)
 	if (!list)
 		return (-1);
 	ps_init_list(list, two_stacks->a_top);
+	if (check_sorted(two_stacks) == true)
+		return (0);
 	quick_sort(list, 0, argc - option_num - 1);
 	set_two_stacks(two_stacks);
 	if (argc - option_num == 3)

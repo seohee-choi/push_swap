@@ -6,13 +6,27 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 17:27:19 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/28 20:13:37 by jolim            ###   ########.fr       */
+/*   Updated: 2021/04/08 15:18:41 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	push_swap(int argc, char **argv)
+static int	check_sorted(t_two_stacks *two_stacks)
+{
+	t_ps_node	*node;
+
+	node = two_stacks->a_top;
+	while (node->down_node != two_stacks->a_top)
+	{
+		if (node->element > node->down_node->element)
+			return (false);
+		node = node->down_node;
+	}
+	return (true);
+}
+
+static int	push_swap(int argc, char **argv)
 {
 	t_two_stacks	*two_stacks;
 	int				*list;
@@ -24,6 +38,8 @@ int	push_swap(int argc, char **argv)
 	if (!list)
 		return (-1);
 	ps_init_list(list, two_stacks->a_top);
+	if (check_sorted(two_stacks) == true)
+		return (0);
 	quick_sort(list, 0, argc - 2);
 	set_two_stacks(two_stacks);
 	if (argc - 1 == 3)
@@ -37,7 +53,7 @@ int	push_swap(int argc, char **argv)
 	return (0);
 }
 
-int	main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	if (argc == 1)
 		return (1);
