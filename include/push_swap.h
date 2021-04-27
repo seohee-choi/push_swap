@@ -3,34 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:52:43 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 23:18:42 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 17:40:52 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# define STACK_A (1)
-# define STACK_B (2)
+# define STACK_A 1
+# define STACK_B 2
 
-# define TOP (0)
-# define MID (1)
-# define BTM (2)
+# define TOP 0
+# define MID 1
+# define BTM 2
 
-# define PA (1)
-# define PB (2)
-# define SA (3)
-# define SB (4)
-# define SS (5)
-# define RA (6)
-# define RB (7)
-# define RR (8)
-# define RRA (9)
-# define RRB (10)
-# define RRR (11)
+# define PA 1
+# define PB 2
+# define SA 3
+# define SB 4
+# define SS 5
+# define RA 6
+# define RB 7
+# define RR 8
+# define RRA 9
+# define RRB 10
+# define RRR 11
 
 # define BASE_SIZE 5000
 
@@ -66,12 +66,13 @@ void	ps_print_register(void);
 ** ps_register.
 */
 
-int		ps_register_operation(bool (*op)(void));
+int		ps_register_operation(int (*op)(void));
 
 /*
 ** functions of ps_simulator.c
 */
 
+void	ps_sort_split_a_init(int list[], int top, int bottom);
 void	ps_sort_split_a(int list[], int top, int bottom);
 void	ps_sort_split_b(int list[], int top, int bottom);
 
@@ -84,7 +85,7 @@ int		pivot_big(int top, int bottom);
 int		pivot_small(int top, int bottom);
 int		max_num(int a, int b);
 int		min_num(int a, int b);
-void	ps_operate_n_times(int n, bool (*op)(void));
+void	ps_operate_n_times(int n, int (*op)(void));
 
 /*
 ** ps_simulator_few.c, ps_size_three.c, ps_size_five.c

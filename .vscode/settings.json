@@ -1,12 +1,7 @@
 {
+	"C_Cpp.errorSquiggles": "Disabled",
 	"files.associations": {
-		"cstdio": "c",
-		"stack_op.h": "c",
 		"checker.h": "c",
-		"push_swap.h": "c",
-		"memory": "c",
-		"utility": "c",
-		"algorithm": "c",
-		"random": "c"
+		"push_swap.h": "c"
 	}
 }

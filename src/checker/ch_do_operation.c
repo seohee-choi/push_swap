@@ -6,13 +6,13 @@
 /*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 18:02:38 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 20:10:24 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/29 17:41:49 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-bool	do_operation(char *line)
+int	do_operation(char *line)
 {
 	if (ft_strcmp(line, "sa") == 0)
 		return (so_sa());
@@ -33,7 +33,7 @@ bool	do_operation(char *line)
 	else if (ft_strcmp(line, "rra") == 0)
 		return (so_rra());
 	else if (ft_strcmp(line, "rrb") == 0)
-		return (so_rra());
+		return (so_rrb());
 	else if (ft_strcmp(line, "rrr") == 0)
 		return (so_rrr());
 	return (false);

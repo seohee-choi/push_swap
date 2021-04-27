@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_init_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 20:50:24 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/18 21:12:12 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 17:46:51 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	is_space(char c)
 	return (0);
 }
 
-bool	is_atoi(char *str, int *n)
+int			is_atoi(char *str, int *n)
 {
 	long long	num;
 	int			sign;
@@ -32,6 +32,8 @@ bool	is_atoi(char *str, int *n)
 		sign = -1;
 	if (*str == '-' || *str == '+')
 		str++;
+	if (!ft_isdigit(*str))
+		return (false);
 	while (*str == '0')
 		str++;
 	num = 0;
@@ -47,13 +49,13 @@ bool	is_atoi(char *str, int *n)
 	return (false);
 }
 
-void	*print_error(void)
+void		*print_error(void)
 {
 	ft_putendl_fd("Error", STDERR_FILENO);
 	return (NULL);
 }
 
-void	*exit_error(void)
+void		*exit_error(void)
 {
 	exit(1);
 	return (NULL);

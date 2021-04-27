@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_node_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/22 21:39:51 by seohchoi          #+#    #+#             */
-/*   Updated: 2021/03/22 21:39:52 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/29 16:16:36 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_ps_node	*new_ps_node(int element)
 	return (new_node);
 }
 
-void	add_ps_node_bottom(t_ps_node **top, t_ps_node *new_node)
+void		add_ps_node_bottom(t_ps_node **top, t_ps_node *new_node)
 {
 	t_ps_node	*curr;
 
@@ -45,7 +45,7 @@ void	add_ps_node_bottom(t_ps_node **top, t_ps_node *new_node)
 	(*top)->up_node = new_node;
 }
 
-void	delete_ps_node_list(t_ps_node *node)
+void		delete_ps_node_list(t_ps_node *node)
 {
 	t_ps_node	*curr;
 	t_ps_node	*next;
@@ -67,7 +67,7 @@ void	delete_ps_node_list(t_ps_node *node)
 	return ;
 }
 
-void	print_ps_node_list(t_ps_node *top)
+void		print_ps_node_list(t_ps_node *top)
 {
 	t_ps_node	*curr;
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_register_operation.c                            :+:      :+:    :+:   */
+/*   ps_register_operation_bonus.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 15:42:36 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/29 17:42:33 by seohchoi         ###   ########.fr       */
+/*   Updated: 2021/03/29 17:42:25 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ static void	put_in_register(int op)
 
 int			ps_register_operation(int (*op)(void))
 {
+	if (*get_option() & DEBUG_FLAG || *get_option() & DEBUG_HOR_FLAG)
+		print_ps_two_stacks(*get_two_stacks(), *get_option());
 	if (op == so_pa)
 		put_in_register(PA);
 	else if (op == so_pb)
@@ -86,6 +88,5 @@ int			ps_register_operation(int (*op)(void))
 		put_in_register(RRB);
 	else
 		put_in_register(RRR);
-	op();
-	return (1);
+	return (op());
 }

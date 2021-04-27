@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ps_size_three.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 22:00:20 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 17:45:44 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 15:53:25 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	min_node(t_ps_node *top, t_ps_node *mid, t_ps_node *btm)
+static int			min_node(t_ps_node *top, t_ps_node *mid, t_ps_node *btm)
 {
 	if (top->element > mid->element)
 	{
@@ -27,7 +27,7 @@ static int	min_node(t_ps_node *top, t_ps_node *mid, t_ps_node *btm)
 		return (TOP);
 }
 
-static int	max_node(t_ps_node *top, t_ps_node *mid, t_ps_node *btm)
+static int			max_node(t_ps_node *top, t_ps_node *mid, t_ps_node *btm)
 {
 	if (top->element > mid->element)
 	{
@@ -42,7 +42,7 @@ static int	max_node(t_ps_node *top, t_ps_node *mid, t_ps_node *btm)
 		return (BTM);
 }
 
-int	ps_sort_size_three(void)
+int					ps_sort_size_three(void)
 {
 	t_two_stacks	*two_stacks;
 	t_ps_node		*top;

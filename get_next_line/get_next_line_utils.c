@@ -6,14 +6,14 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 01:50:08 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/16 20:30:21 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 16:17:22 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include "../libft/libft.h"
 
-int	put_line(char *s, char **line, int len)
+int		put_line(char *s, char **line, int len)
 {
 	int	i;
 
@@ -78,7 +78,7 @@ char	*str_cat(char *s1, char *s2, int len2)
 	return (new);
 }
 
-int	nl_finder(char *str)
+int		nl_finder(char *str)
 {
 	int	len;
 

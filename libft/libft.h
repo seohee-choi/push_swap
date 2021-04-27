@@ -6,7 +6,7 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 13:12:14 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/16 20:00:48 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 16:13:56 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct s_list
+typedef struct		s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -24,7 +24,7 @@ typedef struct s_list
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(\
-		void *dst, const void *src, size_t n);
+					void *dst, const void *src, size_t n);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
@@ -73,6 +73,6 @@ void				ft_lstclear(t_list **lst, void (*del)(void*));
 t_list				*ft_lstlast(t_list *lst);
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(\
-		t_list *lst, void *(*f)(void *), void (*del)(void *));
+					t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

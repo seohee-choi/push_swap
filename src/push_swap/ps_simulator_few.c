@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ps_simulator_few.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 18:05:47 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 17:56:37 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 15:53:03 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ps_sort_two(t_two_stacks *two_stacks, int stack_name)
+static int			ps_sort_two(t_two_stacks *two_stacks, int stack_name)
 {
 	if (stack_name == STACK_A)
 	{
@@ -30,7 +30,7 @@ static int	ps_sort_two(t_two_stacks *two_stacks, int stack_name)
 	return (1);
 }
 
-static int	ps_sort_three_a(t_two_stacks *two_stacks)
+static int			ps_sort_three_a(t_two_stacks *two_stacks)
 {
 	if (two_stacks->a_top->element == min_num(min_num(\
 two_stacks->a_top->element, two_stacks->a_top->down_node->element), \
@@ -58,7 +58,7 @@ two_stacks->a_top->down_node->down_node->element))
 	return (ps_register_operation(so_pa));
 }
 
-static int	ps_sort_three(t_two_stacks *two_stacks, int stack_name)
+static int			ps_sort_three(t_two_stacks *two_stacks, int stack_name)
 {
 	if (stack_name == STACK_A)
 		return (ps_sort_three_a(two_stacks));
@@ -87,7 +87,7 @@ two_stacks->b_top->down_node->down_node->element))
 	return (0);
 }
 
-int	ps_sort_below_three(int num, int stack_name)
+int					ps_sort_below_three(int num, int stack_name)
 {
 	t_two_stacks	*two_stacks;
 

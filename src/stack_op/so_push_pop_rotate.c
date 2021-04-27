@@ -6,13 +6,13 @@
 /*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 15:14:15 by jolim             #+#    #+#             */
-/*   Updated: 2021/03/22 17:57:39 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 16:14:22 by jolim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack_op.h"
 
-void	so_push_stack(t_ps_node **top, t_ps_node *new_node)
+void		so_push_stack(t_ps_node **top, t_ps_node *new_node)
 {
 	t_ps_node	*bottom;
 	t_ps_node	*prev_top;
@@ -32,7 +32,7 @@ void	so_push_stack(t_ps_node **top, t_ps_node *new_node)
 	new_node->down_node = prev_top;
 }
 
-t_ps_node	*so_pop_stack(t_ps_node	**top)
+t_ps_node	*so_pop_stack(t_ps_node **top)
 {
 	t_ps_node	*bottom;
 	t_ps_node	*new_top;
@@ -58,21 +58,21 @@ t_ps_node	*so_pop_stack(t_ps_node	**top)
 	return (extractee);
 }
 
-void	so_rotate_stack(t_ps_node **top)
+void		so_rotate_stack(t_ps_node **top)
 {
 	if (!*top)
 		return ;
 	*top = (*top)->down_node;
 }
 
-void	so_reverse_rotate_stack(t_ps_node **top)
+void		so_reverse_rotate_stack(t_ps_node **top)
 {
 	if (!*top)
 		return ;
 	*top = (*top)->up_node;
 }
 
-void	so_swap_stack(t_ps_node **top)
+void		so_swap_stack(t_ps_node **top)
 {
 	t_ps_node	*node_a;
 	t_ps_node	*node_b;

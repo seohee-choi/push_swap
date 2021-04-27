@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   so_operate_swap.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jolim <jolim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: seohchoi <seohchoi@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 16:39:32 by seohchoi          #+#    #+#             */
-/*   Updated: 2021/03/22 18:01:48 by jolim            ###   ########.fr       */
+/*   Updated: 2021/03/29 17:41:49 by seohchoi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack_op.h"
 
-bool	so_sa(void)
+int	so_sa(void)
 {
 	t_two_stacks	**two_stacks;
 
@@ -21,7 +21,7 @@ bool	so_sa(void)
 	return (true);
 }
 
-bool	so_sb(void)
+int	so_sb(void)
 {
 	t_two_stacks	**two_stacks;
 
@@ -30,7 +30,7 @@ bool	so_sb(void)
 	return (true);
 }
 
-bool	so_ss(void)
+int	so_ss(void)
 {
 	so_sa();
 	so_sb();
